@@ -264,10 +264,14 @@ div img {
 .page8 a:active {
     transform: translateY(250px) scale(1.2);
 }
-.page8 #video {
+#videoinfo{
+    width: 100%;
+}
+.page8 #videobox {
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 72% !important;
+    top: 37%;
+    left: 14%;
 }
 .page9 {
     background: url(../image/9.png) no-repeat center center fixed;

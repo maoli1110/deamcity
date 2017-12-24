@@ -5,7 +5,7 @@ page4 = '<div class="content page4 rela"><div class="moon"></div><div class="roc
 page5 = '<div class="content page5 rela"><div class="head"><img src="image/head.gif"></div><div class="absol righthand"><img src="image/righthand.png"></div><div class="absol lefthand"><img src="image/lefthand.png"></div><div>',
 page6 = '<div class="content page6"><div class="woman"><img src="image/woman.gif"></div><div>',
 page7 = '<div class="content page7 rela"><div class="person"><img src="image/person.gif"></div><div class="absol cloud"><img src="image/cloud.png"></div><div class="absol sun"><img src="image/sun.png"></div><div>',
-page8 = '<div class="content page8"><div><video id="video" class="video" preload="auto" playsinline src="./image/water.mp4" width="1" height="1" type="video/mp4"></video></div><a><img src="image/vbutton.jpg"></a><div>',
+page8 = '<div class="content page8"><div> <div id="videobox" style="width: 100%; height: 300px;"><video id="videoinfo" src="./image/11.mp4" preload="auto" poster="./image/1.jpg" webkit-playsinline="true" playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" x5-video-orientation="portraint"></video></div></div><a><img src="image/vbutton.jpg"></a><div>',
 page9 = '<div class="content page9">'+
 '<span class="selectType"><a title="" href="#" class="ipt" id="selectTypeText">请选择</a><span id="selectTypeMenu"><a rel="1" class="select-click" title="" href="#">北京</a><a rel="2" class="select-click" title="" href="#">杭州</a><a rel="3" class="select-click" title="" href="#">深圳</a><a rel="4" class="select-click" title="" href="#">广州</a><a rel="2" class="select-click" title="" href="#">成都</a></span><input type="hidden" name="" class="ipt" value="" id="selectTypeRel"><em class="searchArrow hh abs">下拉选择</em></span>'
 +'<a class="next"><img src="image/dream.png"></a><div>',
@@ -40,7 +40,38 @@ window.onload = function () {
             suncloud = document.querySelector('.sun');
             cloud.setAttribute('class', cloud.getAttribute('class') + ' cloudleft');
             suncloud.setAttribute('class', suncloud.getAttribute('class') + ' sunright');
-        } else if (num === 8) {
+        } else if (num === 7) {
+            document.addEventListener('touchmove', function(e){e.preventDefault()}, false);
+            document.getElementById('videobox').addEventListener('touchstart',function(){
+                console.log('sdss')
+                videoinfo.play(); 
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    videoinfo.play(); 
+                }, false); 
+            })
+            var videobox=document.getElementById('videoinfo');
+
+            window.onresize=function(){
+                videobox.style.width=window.innerWidth+'px';
+                videobox.style.height=window.innerHeight+'px';
+            }
+            
+            videobox.addEventListener('timeupdate',function(){
+                var currenttime=videobox.currentTime;            
+                console.log('当前播放时间：'+videobox.currentTime);
+            })        
+            
+            //视频播放状态
+            videobox.addEventListener('canplaythrough',function(){
+                console.log('canplaythrough');
+                //alert('canplaythrough');
+                var alltime=videobox.duration;
+                console.log(alltime)
+            })
+            videobox.addEventListener('ended',function(){
+                console.log('播放事件：ended');
+            })
+        }else if (num === 8) {
             var next = document.querySelector('.next');
             // console.log(next)
             next.addEventListener('touchstart', function (e) {
