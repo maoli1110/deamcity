@@ -43,19 +43,21 @@ var list = [
     {'content': page9},
     {'content': page10}];
 $(function () {
+    var timer;
     var islider = new iSlider({
         data: list,
         dom: document.getElementById("iSlider-wrapper"),
         // duration: 1000,
         isVertical: true,
         oninitialized: function () {
-            setTimeout(function () {
+            timer = setTimeout(function () {
                 islider.slideNext();
             }, 3000);
         }
     });
     islider.on('slideChanged', function (num) {
         console.log(num);
+        timer && clearTimeout(timer);
         if (num === 4) {
             var righthand = document.querySelector('.righthand'),
             lefthand = document.querySelector('.lefthand');
