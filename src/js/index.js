@@ -1,3 +1,24 @@
+var vote = '<div class="skillbar-wrapper"><div class="skillbar clearfix " data-percent="20%"><div class="skillbar-bg"></div>'+
+    '<div class="skillbar-title"><span></span></div>'+
+    '<div class="skillbar-bar" style="background: #4c9d2a;"></div>'+
+    '<div class="skill-bar-percent">20%</div></div>'+
+    '<div class="skillbar clearfix " data-percent="40%"><div class="skillbar-bg"></div>'+
+    '<div class="skillbar-title"><span></span></div>'+
+    '<div class="skillbar-bar" style="background: #4c9d2a;"></div>'+
+    '<div class="skill-bar-percent">20%</div></div>'+
+    '<div class="skillbar clearfix " data-percent="60%"><div class="skillbar-bg"></div>'+
+    '<div class="skillbar-title"><span></span></div>'+
+    '<div class="skillbar-bar" style="background: #4c9d2a;"></div>'+
+    '<div class="skill-bar-percent">20%</div></div>'+
+    '<div class="skillbar clearfix " data-percent="70%"><div class="skillbar-bg"></div>'+
+    '<div class="skillbar-title"><span></span></div>'+
+    '<div class="skillbar-bar" style="background: #4c9d2a;"></div>'+
+    '<div class="skill-bar-percent">20%</div></div>'+
+    '<div class="skillbar clearfix " data-percent="100%"><div class="skillbar-bg"></div>'+
+    '<div class="skillbar-title"><span></span></div>'+
+    '<div class="skillbar-bar" style="background: #4c9d2a;"></div>'+
+    '<div class="skill-bar-percent">20%</div></div></div>';
+
 var page1 = '<div class="content page1"><div class="door animate-flicker"></div><div>',
 page2 = '<div class="content page2"><div class="box"><img src="./image/box.gif"></div><div class="plant"><img src="./image/plant.gif"></div><div class="text-1"><img class="animated fadeInUp" src="./image/2-text1.png"></div><div class="text-2"><img class="animated fadeInUp" src="./image/2-text2.png"></div><div class="text-3"><img class="animated fadeInUp" src="./image/2-text3.png"></div><div>';
 page3 = '<div class="content page3"><div class="finger animate-bounce-down"></div><div class="text-1"><img class=" animated fadeInUp" src="./image/3-text1.png" alt="" /><div class="line-1"><img src="./image/3-line1.png" alt="" /></div></div>',
@@ -9,7 +30,7 @@ page8 = '<div class="content page8"><div> <div id="videobox" style="width: 100%;
 page9 = '<div class="content page9">'+
 '<span class="selectType"><a title="" href="#" class="ipt" id="selectTypeText">请选择</a><span id="selectTypeMenu"><a rel="1" class="select-click" title="" href="#">北京</a><a rel="2" class="select-click" title="" href="#">杭州</a><a rel="3" class="select-click" title="" href="#">深圳</a><a rel="4" class="select-click" title="" href="#">广州</a><a rel="2" class="select-click" title="" href="#">成都</a></span><input type="hidden" name="" class="ipt" value="" id="selectTypeRel"><em class="searchArrow hh abs">下拉选择</em></span>'
 +'<a class="next"><img src="image/dream.png"></a><div>',
-page10 = '<div class="content page10 rela"><div class="mask absol"><img src="image/shareguide.gif"><img class="word" src="image/shareword.png"></div><div class="bottom-button"><div><a class="back"><img src="image/back.gif"></a><a class="share"><img src="image/share.gif"></a></div></div><div>';
+page10 = '<div class="content page10 rela">'+vote+'<div class="mask absol"><img src="image/shareguide.gif"><img class="word" src="image/shareword.png"></div><div class="bottom-button"><div><a class="back"><img src="image/back.gif"></a><a class="share"><img src="image/share.gif"></a></div></div><div>';
 var list = [
     {'content': page1},
     {'content': page2},
@@ -21,15 +42,20 @@ var list = [
     {'content': page8},
     {'content': page9},
     {'content': page10}];
-window.onload = function () {
+$(function () {
     var islider = new iSlider({
         data: list,
         dom: document.getElementById("iSlider-wrapper"),
         // duration: 1000,
-        isVertical: true
+        isVertical: true,
+        oninitialized: function () {
+            setTimeout(function () {
+                islider.slideNext();
+            }, 3000);
+        }
     });
     islider.on('slideChanged', function (num) {
-    console.log(num)
+        console.log(num);
         if (num === 4) {
             var righthand = document.querySelector('.righthand'),
             lefthand = document.querySelector('.lefthand');
@@ -112,10 +138,36 @@ window.onload = function () {
             back.addEventListener('touchstart', function () {
                 islider.slideTo(0);
             });
+            function setSkillbar(data) {
+                $('.skillbar').each(function(i){
+                    $(this).attr('data-percent', data[i].percent);
+                    $('.skillbar-title span').eq(i).html(data[i].area + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + data[i].amount + '票');
+                    $(this).find('.skillbar-bar').animate({
+                        width:$(this).attr('data-percent')
+                    }, 800);
+                });
+            }
+            // ajax调用投票数据
+            // $.ajax({
+            //     url: '......',
+            //     method: 'GET',
+            // }).done(function(data) {
+            //     setSkillbar(data)
+            // })
+
+            // fakeData为出参结构（暂定）
+            var fakeData = [
+                {area: '北京', amount: 50, percent: '20%'},
+                {area: '杭州', amount: 10, percent: '2%'},
+                {area: '深圳', amount: 40, percent: '10%'},
+                {area: '广州', amount: 90, percent: '50%'},
+                {area: '成都', amount: 30, percent: '5%'}
+            ];
+            // 暂时生成计票器
+            setSkillbar(fakeData);
         }
     });
-
-}
+});
     
 function openWin() {
     var win = document.querySelector('.win');
