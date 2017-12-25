@@ -54,13 +54,16 @@ $(document).ready(function () {
       speed: 1500
     });
     var timer;
+    function init() {
+        addAminate($('.page1'));
+        mySwiper.allowSlideNext = false;
+        timer = setTimeout(function () {
+            mySwiper.allowSlideNext = true;
+            mySwiper.slideNext();
+        }, 3000);
+    }
     if (mySwiper.activeIndex === 0) {
-    	addAminate($('.page1'));
-    	mySwiper.allowSlideNext = false;
-    	timer = setTimeout(function () {
-    		mySwiper.allowSlideNext = true;
-    		mySwiper.slideNext();
-    	}, 3000);
+    	init();
     }
     mySwiper.on('slideChange', function () {
     	var num = mySwiper.activeIndex;
@@ -68,7 +71,9 @@ $(document).ready(function () {
     	timer && clearTimeout(timer);
         removeAminate();
     	addAminate($('.page' + (num + 1)));
-    	if (num === 1) {
+    	if (num === 0) {
+            init();
+        } else if (num === 1) {
     		timer = setTimeout(function () {
     			mySwiper.slideNext();
     		}, 4000);
