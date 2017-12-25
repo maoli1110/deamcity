@@ -24,7 +24,7 @@ div img { width: 100%; }
 .page2 .text-2 img { display: block; position: absolute; width: 17%; top: 27%; right: 20%; z-index: 2; }
 .page2 .text-3 img { position: absolute; width: 48%; right: 27%; top: 19%; }
 .page3 { background: url(../image/3-1.jpg) no-repeat center center fixed; }
-.page3 .text-1 .animated{ -vendor-animation-duration: 3s; -vendor-animation-delay: 4s; animation-duration: 3s; animation-delay: 2s; }
+.page3 .text-1 .animated{ -vendor-animation-duration: 3s; -vendor-animation-delay: 4s; animation-duration: 3s; animation-delay: 3s; }
 .page3 .text-1 >img { position: fixed;
     width: 0.4rem;
     margin: 50% auto;
