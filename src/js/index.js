@@ -63,9 +63,9 @@ $(function () {
         console.log(num);
         timer && clearTimeout(timer);
         if (num === 1){
-            // timer = setTimeout(function () {
-            //     islider.slideNext();
-            // }, 5000);
+            timer = setTimeout(function () {
+                islider.slideNext();
+            }, 4000);
         } else if (num === 4) {
             var righthand = document.querySelector('.righthand'),
             lefthand = document.querySelector('.lefthand');
@@ -77,7 +77,7 @@ $(function () {
             cloud.setAttribute('class', cloud.getAttribute('class') + ' cloudleft');
             suncloud.setAttribute('class', suncloud.getAttribute('class') + ' sunright');
         } else if (num === 7) {
-            // document.addEventListener('touchmove', function(e){e.preventDefault()}, false);
+            //视频播放代码
             document.getElementById('videobox').addEventListener('touchstart',function(){
                 console.log('sdss')
                 videoinfo.play(); 
