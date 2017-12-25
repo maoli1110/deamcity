@@ -15,19 +15,44 @@ div img { width: 100%; }
 }
 .animate-flicker { animation: fadeIn 1s infinite alternate; }
 .page2 { background: url(../image/2.jpg) no-repeat center center fixed; }
-.box img { position: absolute; z-index: 2; width: 30%; top: 15%; left: 21%; }
-.plant img { position: absolute; z-index: 2; width: 22%; top: 68%; left: 17%; }
+.box img { position: absolute; z-index: 2; width: 30%; top: 15%; left: 23%; }
+.plant img { position: absolute; z-index: 2; width: 22%; top: 70%; left: 21%; }
 .page2 .text-1 img { display: block; position: absolute; width: 11%; top: 9%; right: 24%; z-index: 2; }
-.page2 .text-2 .animated { -vendor-animation-duration: 3s; -vendor-animation-delay: 1s; animation-duration: 3s; animation-delay: 1s; }
-.page2 .text-3 .animated { -vendor-animation-duration: 3s; -vendor-animation-delay: 2s; animation-duration: 3s; animation-delay: 2s; }
+.page2 .text-1 .animated { -vendor-animation-duration: 3s; -vendor-animation-delay: 2s; animation-duration: 3s; animation-delay: 2s; }
+.page2 .text-2 .animated { -vendor-animation-duration: 3s; -vendor-animation-delay: 2s; animation-duration: 3s; animation-delay: 2s; }
+.page2 .text-3 .animated { -vendor-animation-duration: 3s; -vendor-animation-delay: 3s; animation-duration: 3s; animation-delay: 3s; }
 .page2 .text-2 img { display: block; position: absolute; width: 17%; top: 27%; right: 20%; z-index: 2; }
 .page2 .text-3 img { position: absolute; width: 48%; right: 27%; top: 19%; }
 .page3 { background: url(../image/3-1.jpg) no-repeat center center fixed; }
-.page3 .text-1 { -vendor-animation-duration: 3s; -vendor-animation-delay: 2s; animation-duration: 3s; animation-delay: 2s; }
-.page3 .text-1 >img { position: fixed; width: 0.4rem; margin: 50% auto; right: 0; left: 0; }
-.page3 .line-1 >img { position: fixed; width: 0.5rem; height: 0.7rem; margin: 0 auto; right: 0; left: 10px; bottom: 14%; }
+.page3 .text-1 .animated{ -vendor-animation-duration: 3s; -vendor-animation-delay: 4s; animation-duration: 3s; animation-delay: 2s; }
+.page3 .text-1 >img { position: fixed;
+    width: 0.4rem;
+    margin: 50% auto;
+    right: 0;
+    left: 0.1rem; }
+.page3 .line-1 >img {     position: fixed;
+    width: 0.5rem;
+    height: 1rem;
+    margin: 0 auto;
+    right: 0;
+    left: 0.2rem;
+    bottom: 19%; }
 .page3 .finger { position: absolute; margin: 0 auto; z-index: 2; left: 0; right: 0; width: 25.5px; height: 37.5px; bottom: 44px; background: url(../image/finger.jpg) no-repeat; background-size: 100% 100%; }
 .page4 { background: url(../image/4.jpg) no-repeat center center fixed; position: relative; }
+.page4 .moon >img{
+    position: fixed;
+    width: 1rem;
+    right: 0;
+    left: 0;
+    bottom: 3.5rem;
+}
+.page4 .rocket >img{
+    position: fixed;
+    width: 1rem;
+    right: 0;
+    left: 42%;
+    bottom: 1rem;
+}
 .house { display: block; width: 200px; height: 275px; margin-top: 50%; margin-left: -10%; transform: translateY(158px); }
 .win { width: 100%; height: 780px; background: url(../image/window.png) no-repeat top left; background-size: 104%; top: -100%; left: 50%; transform: translateX(-193px) translateY(-315px); }
 @-webkit-keyframes slidein {
@@ -51,7 +76,8 @@ div img { width: 100%; }
 .sunright { right: 0; }
 .cloud { top: 50%; transform: translateY(-280px); width: 40%; left: -300px; transition: all 1s ease; animation-delay: 2s; }
 .cloudleft { left: 0; }
-.page8 { background: url(../image/8.jpg) no-repeat center center fixed; }
+.page8 { background: url(../image/8.png) no-repeat center center fixed; }
+.page8 .doorplate >img{ position: fixed; width: 2rem; margin: 0 auto; right: 0; left: 0.2rem;top: 1.5rem;}
 .page8 a { display: block; margin-top: 50%; transform: translateY(250px) scale(1); transition: all .2s ease-in-out; }
 .page8 a:active { transform: translateY(250px) scale(1.2); }
 #videoinfo { width: 100%; }
@@ -61,9 +87,9 @@ div img { width: 100%; }
 .city li { height: 33px; line-height: 40px; font-size: 0.16rem; font-weight: bold; }
 .page9 .next img { position: fixed; width: 1.2rem; margin: 0 auto; right: 0; left: 0; bottom: 0.2rem; }
 .page10 { background: url(../image/10.jpg) no-repeat center center fixed; }
-.page10 .bottom-button { position: fixed; width: 3rem; margin: 0 auto; right: 0; left: 0; bottom: 0.2rem; }
+.page10 .bottom-button { position: fixed; margin: 0 auto; right: 0; left: 0; bottom: 0.2rem; }
 .page10 .bottom-button > div >a { float: left; width: 49%; }
-.page10 .bottom-button img { float: left; width: 104%; }
+.page10 .bottom-button img { float: left; width: 113%; }
 .page10 .bottom-button .share { margin-top: -12px; }
 .page10 .bottom-button .share img { width: 95%; }
 .mask { top: 0; bottom: 100%; left: 0; right: 0; background: rgba(0, 0, 0, .7); z-index: 99; transition: all 1s ease; }
@@ -95,6 +121,29 @@ div img { width: 100%; }
     50%, 100% { transform: translateY(0); }
     75% { transform: translateY(-10px); }
 }
+
+/*广告牌左右移动*/
+@-webkit-keyframes bounce-lefta {
+    25% { -webkit-transform: translateX(-10px); }
+    50%, 100% { -webkit-transform: translateX(0); }
+    75% { -webkit-transform: translateX(10px); }
+}
+@keyframes bounce-lefta {
+    25% { transform: translateX(-10px); }
+    50%, 100% { transform: translateX(0); }
+    75% { transform: translateX(10px); }
+}
+.animate-bounce-left { -webkit-animation: bounce-lefta 1.5s linear infinite; animation: bounce-lefta 1.5s linear infinite; }
+@-webkit-keyframes bounce-right {
+    25% { -webkit-transform: translateX(10px); }
+    50%, 100% { -webkit-transform: translateX(0); }
+    75% { -webkit-transform: translateX(-10px); }
+}
+@keyframes bounce-right {
+    25% { transform: translateX(10px); }
+    50%, 100% { transform: translateX(0); }
+    75% { transform: translateX(-10px); }
+}
 .animate-bounce-up { -webkit-animation: bounce-up 1.4s linear infinite; animation: bounce-up 1.4s linear infinite; }
 .sysSelect { width: 38%; height: 28px; line-height: 28px; border: 1px solid #CCC; font-size: 14px; }
 .sysSelect option { height: 28px; line-height: 28px; }
@@ -111,7 +160,21 @@ div img { width: 100%; }
 .skillbar-title i { font-style: normal; color: #fff; margin-left: 15px; }
 .skillbar-bar { height: 44px; width: 0px; background: #6adcfa; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; position: absolute; z-index: 2; }
 .skill-bar-percent { display: none; position: absolute; right: 10px; top: 0; font-size: 11px; height: 35px; line-height: 35px; color: #ffffff; color: rgba(0, 0, 0, 0.4); }
-.skillbar-wrapper { margin-top: 200px; }
+.skillbar-wrapper { margin-top: 69%; }
 .skillbar { width: 166px; margin-left: 20px; background-repeat: no-repeat; background-size: contain; height: 8px; margin-bottom: 50px; }
 .skillbar-bar { height: 8px; margin-left: 5px; }
 .skillbar-bg { z-index: 1; position: absolute; background: url(../image/vote.png) no-repeat top left; background-size: cover; top: -22px; bottom: -10px; width: 129%; margin-left: -10px; }
+#hand{
+   -webkit-animation:swinging 2s ease-in-out 0s infinite;
+   -moz-animation:swinging 2s ease-in-out 0s infinite;
+   animation:swinging 2s ease-in-out 0s infinite;
+   -webkit-transform-origin: 50% 100%;
+   -moz-transform-origin: 50% 100%;
+   transform-origin: 50% 100%;
+}
+
+@-webkit-keyframes swinging{
+   0% { -webkit-transform: rotate(10deg); }
+   50% { -webkit-transform: rotate(-10deg); }
+   100% { -webkit-transform: rotate(10deg); }
+}
