@@ -9,7 +9,13 @@ body { margin: 0; padding: 0; overflow: hidden; }
 div[class*="page"] { -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
 div img { width: 100%; }
 .page1 { background: url(../image/1.jpg) no-repeat center center fixed; }
-.door { width: 100%; height: 180px; margin-top: 70px; background: url(../image/door.png) no-repeat center center; }
+.door {
+    width: 110%;
+    height: 135px;
+    margin-top: 19%;
+    background: url(../image/door.png) no-repeat center center;
+}
+}
 @keyframes fadeIn {
     from { opacity: .7; }
 }
@@ -20,16 +26,18 @@ div img { width: 100%; }
 .page2 .text-1 img { display: block; position: absolute; width: 11%; top: 9%; right: 24%; z-index: 2; }
 .page2 .text-1 .animated { -vendor-animation-duration: 3s; -vendor-animation-delay: 2s; animation-duration: 3s; animation-delay: 2s; }
 .page2 .text-2 .animated { -vendor-animation-duration: 3s; -vendor-animation-delay: 2s; animation-duration: 3s; animation-delay: 2s; }
-.page2 .text-3 .animated { -vendor-animation-duration: 3s; -vendor-animation-delay: 3s; animation-duration: 3s; animation-delay: 3s; }
+.page2 .text-3 .animated { -vendor-animation-duration: 3s; -vendor-animation-delay: 3s; animation-duration: 3s; animation-delay: 2s; }
 .page2 .text-2 img { display: block; position: absolute; width: 17%; top: 27%; right: 20%; z-index: 2; }
 .page2 .text-3 img { position: absolute; width: 48%; right: 27%; top: 19%; }
 .page3 { background: url(../image/3-1.jpg) no-repeat center center fixed; }
 .page3 .text-1 .animated{ -vendor-animation-duration: 3s; -vendor-animation-delay: 4s; animation-duration: 3s; animation-delay: 3s; }
-.page3 .text-1 >img { position: fixed;
+.page3 .text-1 >img {     
+    position: fixed;
     width: 0.4rem;
-    margin: 50% auto;
+    margin: 0 auto;
     right: 0;
-    left: 0.1rem; }
+    left: 0;
+    top: 32%;}
 .page3 .line-1 >img {     position: fixed;
     width: 0.5rem;
     height: 1rem;
@@ -77,8 +85,23 @@ div img { width: 100%; }
 .cloud { top: 50%; transform: translateY(-280px); width: 40%; left: -300px; transition: all 1s ease; animation-delay: 2s; }
 .cloudleft { left: 0; }
 .page8 { background: url(../image/8.png) no-repeat center center fixed; }
-.page8 .doorplate >img{ position: fixed; width: 2rem; margin: 0 auto; right: 0; left: 0.2rem;top: 1.5rem;}
-.page8 a { display: block; margin-top: 50%; transform: translateY(250px) scale(1); transition: all .2s ease-in-out; }
+.page8 .doorplate >img{
+    position: fixed;
+    width: 42%;
+    margin: 0 auto; 
+    right: 0; 
+    left: 8%;
+    top: 22%;
+}
+.page8 a { 
+    position: fixed;
+    display: block;
+    top: 56%;
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    }
 .page8 a:active { transform: translateY(250px) scale(1.2); }
 #videoinfo { width: 100%; }
 .page8 #videobox { position: absolute; width: 72% !important; top: 37%; left: 14%; }
@@ -86,6 +109,15 @@ div img { width: 100%; }
 .city { width: 125px; height: 240px; overflow: hidden; list-style: none; padding: 0; text-align: center; margin-top: 50%; margin-left: 50%; transform: translateX(-62px) translateY(160px); }
 .city li { height: 33px; line-height: 40px; font-size: 0.16rem; font-weight: bold; }
 .page9 .next img { position: fixed; width: 1.2rem; margin: 0 auto; right: 0; left: 0; bottom: 0.2rem; }
+.page9 .cloud-move img{    
+    width: 1rem;
+    top: 21%;
+    left: 0;
+ position: fixed; right: 0; left: 0; bottom: 0.2rem; 
+}
+.page9 .zoom-finger img{width: 0.6rem;top: 13%;position: fixed; margin: 0 auto; right: 0; left: 0; bottom: 0.2rem; 
+}
+.page9 .zoom-finger .animated {-vendor-animation-duration: 1s;  animation-duration: 1s;}
 .page10 { background: url(../image/10.jpg) no-repeat center center fixed; }
 .page10 .bottom-button { position: fixed; margin: 0 auto; right: 0; left: 0; bottom: 0.2rem; }
 .page10 .bottom-button > div >a { float: left; width: 49%; }
@@ -144,12 +176,35 @@ div img { width: 100%; }
     50%, 100% { transform: translateX(0); }
     75% { transform: translateX(-10px); }
 }
+
+/*云左右移动*/
+@-webkit-keyframes bounce-lefta {
+    25% { -webkit-transform: translateX(-20px); }
+    50%, 100% { -webkit-transform: translateX(0); }
+    75% { -webkit-transform: translateX(20px); }
+}
+@keyframes bounce-lefta {
+    25% { transform: translateX(-20px); }
+    50%, 100% { transform: translateX(0); }
+    75% { transform: translateX(20px); }
+}
+.animate-bounce-left { -webkit-animation: bounce-lefta 4s linear infinite; animation: bounce-lefta 4s linear infinite; }
+@-webkit-keyframes bounce-right {
+    25% { -webkit-transform: translateX(20px); }
+    50%, 100% { -webkit-transform: translateX(0); }
+    75% { -webkit-transform: translateX(-20px); }
+}
+@keyframes bounce-right {
+    25% { transform: translateX(20px); }
+    50%, 100% { transform: translateX(0); }
+    75% { transform: translateX(-20px); }
+}
 .animate-bounce-up { -webkit-animation: bounce-up 1.4s linear infinite; animation: bounce-up 1.4s linear infinite; }
 .sysSelect { width: 38%; height: 28px; line-height: 28px; border: 1px solid #CCC; font-size: 14px; }
 .sysSelect option { height: 28px; line-height: 28px; }
 .selectType { position: absolute; width: 38%; height: 39px; line-height: 39px; font-size: 14px; z-index: 10; left: 31%; bottom: 41%; }
-.selectType .ipt { width: 100%; height: 38px; background: #fff; line-height: 38px; text-align: center; border: 1px solid #CCC; display: inline-block; text-decoration: none; color: #000; text-indent: 5px; outline: none; font-weight: bold; }
-.selectType span { position: absolute; width: 100%; background-color: #fff; border: 1px solid #CCC; left: 0px; top: 40px; text-indent: 6px; line-height: 26px; display: none; }
+.selectType .ipt { width: 100%; height: 38px;background: url('../image/9_libg1.jpg'); background-size: 91%;line-height: 38px; text-align: center; border: 1px solid #CCC; display: inline-block; text-decoration: none; color: #000; text-indent: 5px; outline: none; font-weight: bold; }
+.selectType span { position: absolute; width: 100%; background: url('../image/9_libg2.jpg');background-size: 91%; border: 1px solid #CCC; left: 0px; top: 40px; text-indent: 6px; line-height: 26px; display: none; }
 .selectType span a { color: #333; display: block; text-decoration: none; border-bottom: 1px solid #ccc; margin: 0 11px; height: 0.4rem; line-height: 0.4rem; text-align: center; border-top: none; font-weight: bold; }
 .selectType span a:hover { background-color: #f60; color: #fff; }
 .selectType .searchArrow { border-top: 6px solid #666; border-left: 6px solid #FFF; border-right: 6px solid #FFF; position: absolute; width: 0; height: 0; top: 17px; right: 12px; cursor: pointer; -webkit-transition: -webkit-transform 0.2s ease-in; -moz-transition: -moz-transform 0.2s ease-in; -o-transition: -o-transform 0.2s ease-in; transition: transform 0.2s ease-in; overflow: hidden; text-indent: -2000px; }

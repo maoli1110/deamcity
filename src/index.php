@@ -1,3 +1,7 @@
+<?php
+include_once("init.php");
+get_openid_appid();
+?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -11,7 +15,7 @@
 <div id="iSlider-wrapper"></div>
 <script type="text/javascript" src="./js/jquery.min.js"></script>
 <script type="text/javascript" src="./js/iSlider.js"></script>
-<script type="text/javascript" src="./js/index.js"></script>
+<script type="text/javascript" src="./js/index1.js"></script>
 <script>
 </script>
 </body>
