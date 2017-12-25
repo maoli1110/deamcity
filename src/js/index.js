@@ -51,6 +51,10 @@ $(function () {
         isVertical: true,
         oninitialized: function () {
             timer = setTimeout(function () {
+                islider.lock();
+            }, 100);
+            timer = setTimeout(function () {
+                islider.unlock();
                 islider.slideNext();
             }, 3000);
         }
@@ -58,7 +62,11 @@ $(function () {
     islider.on('slideChanged', function (num) {
         console.log(num);
         timer && clearTimeout(timer);
-        if (num === 4) {
+        if (num === 1){
+            timer = setTimeout(function () {
+                islider.slideNext();
+            }, 3000);
+        } else if (num === 4) {
             var righthand = document.querySelector('.righthand'),
             lefthand = document.querySelector('.lefthand');
             righthand.setAttribute('class', righthand.getAttribute('class') + ' right');
@@ -69,7 +77,7 @@ $(function () {
             cloud.setAttribute('class', cloud.getAttribute('class') + ' cloudleft');
             suncloud.setAttribute('class', suncloud.getAttribute('class') + ' sunright');
         } else if (num === 7) {
-            document.addEventListener('touchmove', function(e){e.preventDefault()}, false);
+            // document.addEventListener('touchmove', function(e){e.preventDefault()}, false);
             document.getElementById('videobox').addEventListener('touchstart',function(){
                 console.log('sdss')
                 videoinfo.play(); 
