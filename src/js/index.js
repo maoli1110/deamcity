@@ -29,7 +29,7 @@ $(document).ready(function () {
             if (num==4) { 
             clearInterval(doortimer) 
                 mySwiper.allowSlideNext = true;
-                mySwiper.slideNext();
+                // mySwiper.slideNext();
             }  
         },1000)  
     }
