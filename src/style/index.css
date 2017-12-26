@@ -1,3 +1,146 @@
+/*
+	HTML5 Reset :: style.css
+	----------------------------------------------------------
+	We have learned much from/been inspired by/taken code where offered from:
+
+	Eric Meyer					:: http://meyerweb.com
+	HTML5 Doctor				:: http://html5doctor.com
+	and the HTML5 Boilerplate	:: http://html5boilerplate.com
+
+-------------------------------------------------------------------------------*/
+
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+main, article, aside, figure, footer, header, nav, section, details, summary {display: block;}
+
+/* Handle box-sizing while better addressing child elements:
+   http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+
+/* Responsive images and other embedded objects */
+/* if you don't have full control over `img` tags (if you have to overcome attributes), consider adding height: auto */
+img,
+object,
+embed {max-width: 100%;}
+
+/*
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+	In fact, it *will* cause problems with Google Maps' controls at small size.
+	If this is the case for you, try uncommenting the following:
+
+#map img {
+		max-width: none;
+}
+*/
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {overflow-y: scroll;}
+
+/* we use a lot of ULs that aren't bulleted.
+	you'll have to restore the bullets within content,
+	which is fine because they're probably customized anyway */
+ul {list-style: none;}
+
+blockquote, q {quotes: none;}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {content: ''; content: none;}
+
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+
+del {text-decoration: line-through;}
+
+abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+
+/* tables still need cellspacing="0" in the markup */
+table {border-collapse: separate; border-spacing: 0;}
+th {font-weight: bold; vertical-align: bottom;}
+td {font-weight: normal; vertical-align: top;}
+
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+
+input, select {vertical-align: middle;}
+
+pre {
+    white-space: pre; /* CSS2 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word; /* IE */
+}
+
+input[type="radio"] {vertical-align: text-bottom;}
+input[type="checkbox"] {vertical-align: bottom;}
+.ie7 input[type="checkbox"] {vertical-align: baseline;}
+.ie6 input {vertical-align: text-bottom;}
+
+select, input, textarea {font: 99% sans-serif;}
+
+table {font-size: inherit; font: 100%;}
+
+small {font-size: 85%;}
+
+strong {font-weight: bold;}
+
+td, td img {vertical-align: top;}
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub, sup {font-size: 75%; line-height: 0; position: relative;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {font-family: monospace, sans-serif;}
+
+/* hand cursor on clickable elements */
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {cursor: pointer;}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {margin: 0;}
+
+/* make buttons play nice in IE */
+button,
+input[type=button] {width: auto; overflow: visible;}
+
+/* scale images in IE7 more attractively */
+.ie7 img {-ms-interpolation-mode: bicubic;}
+
+/* prevent BG image flicker upon hover
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+
+/* let's clear some floats */
+.clearfix:after { content: " "; display: block; clear: both; }
+
+
 html { font-size: 100px; }
 body { margin: 0; padding: 0; overflow: hidden; }
 .rela { position: relative; }
@@ -8,16 +151,19 @@ body { margin: 0; padding: 0; overflow: hidden; }
 .swiper-wrapper { height: 100vh; }
 .swiper-slide { width: 100%; height: 100vh; }
 .content { padding: 10%; height: 100vh; width: 100%; -webkit-box-sizing: border-box; }
-div[class*="page"] { position: relative; -webkit-background-size: contain; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
+div[class*="page"] { position: relative;background-size: 100% 100%;}
 div img { width: 100%; }
-.page1 { background: url(../image/1.jpg) no-repeat center center; }
-.door { width: 110%; height: 135px; margin-top: 40%; background: url(../image/door.png) no-repeat center center; background-size: 35%; }
+.page1 { background: url(../image/1.jpg) no-repeat center center; background-size: 100% 100%}
+#book-door {     width: 106%;
+    height: 135px;
+    margin-top: 34%;
+    background-size: 24%;}
 }
 @keyframes fadeIn {
 from { opacity: .7; }
 }
 .animate-flicker { animation: fadeIn 1s infinite alternate; }
-.page2 { background: url(../image/2.jpg) no-repeat center center; }
+.page2 { background: url(../image/2.jpg) no-repeat center center; background-size: 100% 100%}
 .box img { position: absolute; z-index: 2; width: 30%; top: 15%; left: 23%; }
 .plant img { position: absolute; z-index: 2; width: 22%; top: 71%; left: 20%; }
 .page2 .text-1 img { display: block; position: absolute; width: 11%; top: 9%; right: 24%; z-index: 2; }
@@ -28,48 +174,56 @@ from { opacity: .7; }
 /*animation-duration: 3s;*/
 
 /*animation-delay: 3s;*/ }
-.page2 .text-2 img { display: block; position: absolute; width: 17%; top: 27%; right: 20%; z-index: 2; }
-.page2 .text-3 img { position: absolute; width: 48%; right: 27%; top: 19%; }
-.page3 { background: url(../image/3-1.jpg) no-repeat center center; }
+.page2 .text-2 img { display: block; position: absolute;width: 18%;top: 25%;right: 20%;z-index: 2;;}
+.page2 .text-3 img { position: absolute; width: 48%; right: 28%; top: 19%; }
+.page3 { background: url(../image/3-1.jpg) no-repeat center center; background-size: 100% 100%}
 .page3 .text-1 >img { position: absolute; width: 0.33em; margin: 0 auto; right: 0; left: 0; top: 35%; }
-.page3 .line-1 >img { position: absolute; width: 0.5rem; height: 1rem; margin: 0 auto; right: 0; left: 0.2rem; bottom: 19%; }
+.page3 .line-1 >img { position: absolute; width: 0.2rem; height: 1rem; margin: 0 auto; right: 0; left: 0.1rem; bottom: 19%; }
 .page3 .finger { position: absolute; margin: 0 auto; z-index: 2; left: 0; right: 0; width: 25.5px; height: 37.5px; bottom: 44px; background: url(../image/finger.jpg) no-repeat; background-size: 100% 100%; }
-.page4 { background: url(../image/4.jpg) no-repeat center center; }
+.page4 { background: url(../image/4.jpg) no-repeat center center; background-size: 100% 100% }
 .page4 .moon >img { position: absolute; width: 1em; right: 0; left: 0; bottom: 3.5em; }
 .page4 .rocket >img { position: absolute; width: 1em; right: 0; left: 42%; bottom: 1em; }
-.house { display: block; width: 276px; height: 275px; margin-top: 50%; margin-left: -10%; transform: translateY(158px); }
-.win { width: 100%; height: 780px; background: url(../image/window.png) no-repeat top left; top: 50%; left: 50%; transform: translateX(-200px) translateY(-288px); }
+.house4 { display: block; width: 276px; height: 275px; margin-top: 50%; margin-left: -10%; transform: translateY(158px); }
+.house5 { display: block; width: 100%; height: 275px; margin-top: 50%; margin-left: -10%;}
+.house6 { display: block; width: 276px; height: 275px; margin-top: 50%; margin-left: -10%; transform: translateY(266px); }
+.house7 { display: block;width: 50%;height: 275px;margin-left: 50%;transform: translateY(305px);}
+.win4 { width: 100%; height: 100vh; background: url(../image/4-win.png) no-repeat;background-size: 100%;}
+.win5 { width: 100%; height: 100vh; background: url(../image/5-win.png) no-repeat;background-size: 100%;}
+.win6 { width: 100%; height: 100vh; background: url(../image/6-win.png) no-repeat;background-size: 100%;}
+.win7 { width: 100%; height: 100vh; background: url(../image/7-win.png) no-repeat;background-size: 100%;}
 @-webkit-keyframes slidein {
 100% { top: -100%; }
 }
 @keyframes slidein {
 100% { top: 50%; }
 }
-.page5 { background: url(../image/5.jpg) no-repeat center center; }
-.head img { transform: translateX(76px) translateY(53px) rotate(-9deg); width: 44%; }
-.righthand { top: 50%; transform: translateY(0.1em); width: 33%; right: -300px; transition: all 2s ease; animation-delay: .5s; }
+.page5 { background: url(../image/5.png) no-repeat center center;background-size: 100% 100% }
+.head img {margin-left: 30%; margin-top: 28%;width: 32%;}
+.righthand { top: 50%; transform: translateY(0.1em); width: 28%; right: -300px; transition: all 2s ease; animation-delay: .5s; }
 .right { right: 0; }
 .lefthand { top: 50%; transform: translateY(156px); width: 66%; left: -300px; transition: all 2s ease; animation-delay: 2s; }
 .left { left: 0; }
-.page6 { background: url(../image/6.jpg) no-repeat center center; }
-.woman { margin-left: 50%; margin-top: 50%; width: 33%; transform: translateX(-9px) translateY(70px); }
+.page6 { background: url(../image/6.png) no-repeat center center;background-size: 100% 100% }
+.woman { margin-left: 42%; margin-top: -58%; width: 22%; transform: translateX(-9px) translateY(70px); }
 .page7 { background: url(../image/7.jpg) no-repeat center center; }
-.person { margin-left: 50%; margin-top: 50%; width: 18%; transform: translateX(80px) translateY(48px); }
-.sun { top: 56%; transform: translateY(-220px); width: 33%; right: -300px; transition: all 2s ease; animation-delay: .5s; }
+.person { margin-left: 75%; margin-top: -2%; width: 18%;}
+.trojan { margin-left: -5%; margin-top: 25%; width: 12%; transform: translateX(80px) translateY(48px); }
+.sun { top: 24%; width: 33%; transition: all 2s ease; animation-delay: .5s; }
 .sunright { right: 0; }
 .cloud { top: 50%; transform: translateX(13px) translateY(-318px); width: 26%; left: -300px; transition: all 1s ease; animation-delay: 2s; }
 .cloudleft { left: 0; }
 .page8 { background: url(../image/8.png) no-repeat center center; }
-.page8 .doorplate >img { position: absolute; width: 36%; margin: 0 auto; right: 0; left: 8%; top: 26%; }
+.page8 .doorplate >img { position: absolute; width: 47.8%; margin: 0 auto; right: 0; left: 8%; top: 19%; }
 .page8 a { position: absolute; display: block; top: 56%; width: 90%; left: 0; right: 0; margin: 0 auto; }
 .page8 a:active { transform: translateY(250px) scale(1.2); }
 #videoinfo { width: 100%; }
 .page8 #videobox { position: absolute; width: 72% !important; top: 37%; left: 14%; }
 .page9 { background: url(../image/9.png) no-repeat center center; }
+.page9 .finger{width:9%;}
 .city { width: 125px; height: 240px; overflow: hidden; list-style: none; padding: 0; text-align: center; margin-top: 50%; margin-left: 50%; transform: translateX(-62px) translateY(160px); }
 .city li { height: 33px; line-height: 40px; font-size: 0.16em; font-weight: bold; }
 .page9 .next img { position: absolute; width: 30%; margin: 0 auto; right: 0; left: 0; bottom: 4%; }
-.page9 .cloud-move img { width: 20%; top: 21%; left: 0; position: absolute; right: 0; left: 0; }
+.page9 .cloud-move img { width: 20%; top: 31%; left: 0; position: absolute; right: 0; left: 0; }
 .page9 .zoom-finger img { width: 9%; top: 16%; position: absolute; margin: 0 auto; right: 0; left: 0; }
 .page9 .zoom-finger .animated { -vendor-animation-duration: 1s; animation-duration: 1s; }
 .page10 { background: url(../image/10.jpg) no-repeat center center; }
@@ -169,9 +323,10 @@ from { opacity: .7; }
 .skillbar-title i { font-style: normal; color: #fff; margin-left: 15px; }
 .skillbar-bar { height: 44px; width: 0px; background: #6adcfa; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; position: absolute; z-index: 2; }
 .skill-bar-percent { display: none; position: absolute; right: 10px; top: 0; font-size: 11px; height: 35px; line-height: 35px; color: #ffffff; color: rgba(0, 0, 0, 0.4); }
-.skillbar-wrapper { margin-top: 63%; margin-left: 10%; }
-.skillbar { width: 166px; margin-left: 20px; background-repeat: no-repeat; background-size: contain; height: 8px; margin-bottom: 50px; }
-.skillbar-bar { height: 8px; margin-left: 5px; }
+.skillbar-wrapper {     margin-top: 66%;
+    margin-left: 10%; }
+.skillbar { width: 166px; margin-left: 20px; background-repeat: no-repeat; background-size: contain; height: 1vh; margin-bottom: 7vh; }
+.skillbar-bar { height: 1vh; margin-left: 5px; }
 .skillbar-bg { z-index: 1; position: absolute; background: url(../image/vote.png) no-repeat top left; background-size: cover; top: -22px; bottom: -10px; width: 129%; margin-left: -10px; }
 #hand { -webkit-animation: swinging 2s ease-in-out 0s infinite; -moz-animation: swinging 2s ease-in-out 0s infinite; animation: swinging 2s ease-in-out 0s infinite; -webkit-transform-origin: 50% 100%; -moz-transform-origin: 50% 100%; transform-origin: 50% 100%; }
 @-webkit-keyframes swinging {
@@ -179,3 +334,8 @@ from { opacity: .7; }
 50% { -webkit-transform: rotate(-10deg); }
 100% { -webkit-transform: rotate(10deg); }
 }
+/*door open*/
+.door1{margin:100px auto;width:242px;height:137px;background: url(../image/door1.png) no-repeat center center; no-repeat}  
+.door2{margin:100px auto;width:242px;height:137px;background: url(../image/door2.png) no-repeat center center; no-repeat}  
+.door3{margin:100px auto;width:242px;height:137px;background: url(../image/door3.png) no-repeat center center;no-repeat}  
+.door4{margin:100px auto;width:242px;height:137px;background: url(../image/door4.png) no-repeat center center; no-repeat}  
