@@ -145,31 +145,21 @@ $(document).ready(function () {
             init();
         } else if (num === 1) {
             mySwiper.allowSlidePrev = false;
-      //       mySwiper.allowSlideNext = false;
-    		// timer = setTimeout(function () {
-      //           mySwiper.allowSlideNext = true;
-    		// 	mySwiper.slideNext();
-    		// }, 4000);
+            setTimeout(function () {
+                $('.page2').addClass('animated');
+                $('.page2').addClass($('.page2').data('animate'));
+            }, 1);
+
         }  else if (num === 2) {
             mySwiper.allowSlidePrev = true;
-      //       mySwiper.allowSlideNext = false;
-            // timer = setTimeout(function () {
-      //           mySwiper.allowSlideNext = true;
-            //  mySwiper.slideNext();
-            // }, 4000);
         } else if (num === 6) {
             mySwiper.allowSlideNext = true;
-      //       mySwiper.allowSlideNext = false;
-            // timer = setTimeout(function () {
-      //           mySwiper.allowSlideNext = true;
-            //  mySwiper.slideNext();
-            // }, 4000);
         } else if (num === 7) {
             mySwiper.allowSlideNext = false;
-            $('#go-vote').on('tap', function () {
-                mySwiper.allowSlideNext = true;
-                mySwiper.slideNext();
-            });
+            // $('#go-vote').on('tap', function () {
+            //     mySwiper.allowSlideNext = true;
+            //     mySwiper.slideNext();
+            // });
 
             // 视频相关
             //      $('#videoPlay').on('tap', function () {
@@ -198,11 +188,23 @@ $(document).ready(function () {
                 console.log('播放事件：ended');
             })
 
-            
+            $('#go-vote').on('tap', function () {
+                $('.swiper-slide.page8').addClass('animated');
+                $('.swiper-slide.page8').addClass('fadeOut');
+                setTimeout(function () {
+                    mySwiper.allowSlideNext = true;
+                    mySwiper.slideTo(8, 1, false);
+                }, 1000);
+            })
 
     	} else if (num === 8) {
             mySwiper.allowSlidePrev = false;
     		mySwiper.allowSlideNext = false;
+            setTimeout(function () {
+                $('.swiper-slide.page9').addClass('animated');
+                $('.swiper-slide.page9').addClass('fadeIn');
+            },1);
+            
     		$('.next').on('tap', function () {
     			var cityname = $("#selectTypeRel").val();
                 if(!cityname){
@@ -211,6 +213,7 @@ $(document).ready(function () {
                 }
                 console.log(cityname,'cityname');
                 // 投票
+                removeAminate();
                 vote(cityname, mySwiper);
                 
     		});
