@@ -144,9 +144,12 @@ $(document).ready(function () {
     	if (num === 0) {
             init();
         } else if (num === 1) {
-            $('.swiper-slide.page2').addClass('animated');
-            $('.swiper-slide.page2').addClass($('.swiper-slide.page2').data('animate'));
             // mySwiper.allowSlideNext = false;
+            setTimeout(function () {
+                $('.page2').addClass('animated');
+                $('.page2').addClass($('.page2').data('animate'));
+            }, 1);
+            
     		timer = setTimeout(function () {
     			mySwiper.slideNext();
     		}, 4000);
@@ -186,7 +189,6 @@ $(document).ready(function () {
                 console.log(cityname,'cityname');
                 // 投票
                 vote(cityname, mySwiper);
-                
     		});
     		$("#selectTypeText").on('touchstart', function(e){
                 debugger
