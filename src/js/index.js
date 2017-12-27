@@ -92,33 +92,36 @@ $(document).ready(function () {
                      {area: '深圳', amount: 40, percent: '10%'},
                      {area: '广州', amount: 90, percent: '50%'},
                      {area: '成都', amount: 30, percent: '5%'}
-                 ];
+                ];
 
-                 var maxinfo = a.info[0];
-                 var maxticket = maxinfo['total_ticket'];
+                var maxinfo = a.info[0];
+                var maxticket = maxinfo['total_ticket'];
 
-                 var arr = new Array();
-                 for (var i = 0 ; i< a.info.length ; i ++) {
-                     var item = new Array();
-                     item['area'] = a.info[i]['area'];
-                     item['amount'] = a.info[i]['total_ticket'];
-                     if (maxticket <= 0) {
-                         item['percent'] = "0%";
-                     } else {
-                         item['percent'] = a.info[i]['total_ticket'] * 100 / maxticket + "%";
-                     }
-                     arr[arr.length] = item;
-                 }
-                 var data = arr;
-                 $('.skillbar').each(function(i){
-                     $(this).attr('data-percent', data[i].percent);
-                     $('.skillbar-title span').eq(i).html(data[i].area + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + data[i].amount + '票');
-                     $(this).find('.skillbar-bar').animate({
-                         width:$(this).attr('data-percent')
-                     }, 800);
-                 });
-
-                 mySwiper.slideNext();
+                var arr = new Array();
+                for (var i = 0 ; i< a.info.length ; i ++) {
+                    var item = new Array();
+                    item['area'] = a.info[i]['area'];
+                    item['amount'] = a.info[i]['total_ticket'];
+                    if (maxticket <= 0) {
+                        item['percent'] = "0%";
+                    } else {
+                        item['percent'] = a.info[i]['total_ticket'] * 100 / maxticket + "%";
+                    
+                        arr[arr.length] = item;
+                    }
+                }
+                var data = arr;
+                $('.skillbar').each(function(i){
+                    $(this).attr('data-percent', data[i].percent);
+                    $('.skillbar-title span').eq(i).html(data[i].area + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + data[i].amount + '票');
+                    (this).find('.skillbar-bar').animate({
+                        width:$(this).attr('data-percent')
+                    }, 800);
+                });
+                $('.swiper-slide.page9').addClass('animated');
+                $('.swiper-slide.page9').addClass($('.swiper-slide.page9').data('animate'));
+                mySwiper.allowSlideNext = true;
+                mySwiper.slideTo(9, 1, false);
              } else {
                  alert(a.msg);
              }
@@ -172,14 +175,21 @@ $(document).ready(function () {
     	} else if (num === 8) {
     		// mySwiper.allowSlideNext = false;
     		$('.next').on('tap', function () {
-    			var cityname = $("#selectTypeRel").val();
-                if(!cityname){
-                    alert("请选择城市");
-                    return;
-                }
-                console.log(cityname,'cityname');
-                // 投票
-                vote(cityname, mySwiper);
+    			// var cityname = $("#selectTypeRel").val();
+       //          if(!cityname){
+       //              alert("请选择城市");
+       //              return;
+       //          }
+       //          console.log(cityname,'cityname');
+       //          // 投票
+       //          vote(cityname, mySwiper);
+                $('.swiper-slide.page9').addClass('animated');
+                $('.swiper-slide.page9').addClass($('.swiper-slide.page9').data('animate'));
+                setTimeout(function () {
+                    mySwiper.allowSlideNext = true;
+                    mySwiper.slideTo(9, 1, false);
+                }, 800);
+                
     		});
     		$("#selectTypeText").on('touchstart', function(e){
                 debugger
@@ -201,6 +211,10 @@ $(document).ready(function () {
                 return false;
             });
     	} else if (num === 9) {
+            mySwiper.allowSlidePrev = false;
+            mySwiper.allowSlideNext = false;
+                $('.swiper-slide.page10').addClass('animated');
+                $('.swiper-slide.page10').addClass($('.swiper-slide.page10').data('animate'));
             $('.mask').removeClass('hide');
     		function setSkillbar(data) {
                 $('.skillbar').each(function(i){

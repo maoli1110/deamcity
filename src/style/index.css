@@ -453,8 +453,9 @@ div img {
 
 .sun {
     top: 24%;
+    right: -100px;
     width: 33%;
-    transition: all 2s ease;
+    transition: all 1s ease;
     animation-delay: .5s;
 }
 
