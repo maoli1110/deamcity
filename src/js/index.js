@@ -144,6 +144,8 @@ $(document).ready(function () {
     	if (num === 0) {
             init();
         } else if (num === 1) {
+            $('.swiper-slide.page2').addClass('animated');
+            $('.swiper-slide.page2').addClass($('.swiper-slide.page2').data('animate'));
             // mySwiper.allowSlideNext = false;
     		timer = setTimeout(function () {
     			mySwiper.slideNext();
@@ -208,8 +210,8 @@ $(document).ready(function () {
     	} else if (num === 9) {
             mySwiper.allowSlidePrev = false;
             mySwiper.allowSlideNext = false;
-                $('.swiper-slide.page10').addClass('animated');
-                $('.swiper-slide.page10').addClass($('.swiper-slide.page10').data('animate'));
+            $('.swiper-slide.page10').addClass('animated');
+            $('.swiper-slide.page10').addClass($('.swiper-slide.page10').data('animate'));
             $('.mask').removeClass('hide');
     		function setSkillbar(data) {
                 $('.skillbar').each(function(i){
