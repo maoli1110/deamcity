@@ -11,6 +11,19 @@ function removeAminate() {
     })
 }
 
+var cityMap = {
+    beijin: '北京',
+    hangzhou: '杭州',
+    shenzhen: '深圳',
+    guangzhou: '广州',
+    chengdu: '成都',
+    tianjin: '天津',
+    wuhan: '武汉',
+    xian: '西安',
+    nanjing: '南京',
+    suzhou: '苏州'
+};
+
 $(document).ready(function () {
     //initialize swiper when document ready
     var mySwiper = new Swiper ('.swiper-container', {
@@ -65,7 +78,6 @@ $(document).ready(function () {
             }
         });
     }
-
 
     if (mySwiper.activeIndex === 0) {
         addAminate($('.page1'));
@@ -217,24 +229,32 @@ $(document).ready(function () {
                 vote(cityname, mySwiper);
                 
     		});
-    		$("#selectTypeText").on('touchstart', function(e){
-                e.preventDefault();
-                $("#selectTypeMenu").slideDown(200);
-                $(".searchArrow").addClass("searchArrowRote");
-            })
-            $("#selectTypeText").on('blur', function(e){
-                e.preventDefault();
-                $(this).next("span").slideUp(200);
-                $(".searchArrow").removeClass("searchArrowRote");
-            })
-            $("#selectTypeMenu>a").on('touchstart',function (e) {
-                e.preventDefault();
-                $("#selectTypeText").text($(this).text());
-                $("#selectTypeRel").attr("value", $(this).attr("rel"));
-                $(this).parent().slideUp(200);
-                $(".searchArrow").removeClass("searchArrowRote");
-                return false;
+            $('#selectTypeRel').on('change', function () {
+                var value = $(this).val();
+                console.log(value);
+                $('#selectTypeText').text(cityMap[value]);
             });
+            $('#selectTypeText').on('tap', function () {
+                $('#selectTypeRel').trigger('change')
+            })
+    		// $("#selectTypeText").on('touchstart', function(e){
+      //           e.preventDefault();
+      //           $("#selectTypeMenu").slideDown(200);
+      //           $(".searchArrow").addClass("searchArrowRote");
+      //       })
+      //       $("#selectTypeText").on('blur', function(e){
+      //           e.preventDefault();
+      //           $(this).next("span").slideUp(200);
+      //           $(".searchArrow").removeClass("searchArrowRote");
+      //       })
+      //       $("#selectTypeMenu>a").on('touchstart',function (e) {
+      //           e.preventDefault();
+      //           $("#selectTypeText").text($(this).text());
+      //           $("#selectTypeRel").attr("value", $(this).attr("rel"));
+      //           $(this).parent().slideUp(200);
+      //           $(".searchArrow").removeClass("searchArrowRote");
+      //           return false;
+      //       });
     	} else if (num === 9) {
                 mySwiper.allowSlidePrev = false;
                 mySwiper.allowSlideNext = false;
