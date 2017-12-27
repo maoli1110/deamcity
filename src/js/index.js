@@ -237,24 +237,6 @@ $(document).ready(function () {
             $('#selectTypeText').on('tap', function () {
                 $('#selectTypeRel').trigger('change')
             })
-    		// $("#selectTypeText").on('touchstart', function(e){
-      //           e.preventDefault();
-      //           $("#selectTypeMenu").slideDown(200);
-      //           $(".searchArrow").addClass("searchArrowRote");
-      //       })
-      //       $("#selectTypeText").on('blur', function(e){
-      //           e.preventDefault();
-      //           $(this).next("span").slideUp(200);
-      //           $(".searchArrow").removeClass("searchArrowRote");
-      //       })
-      //       $("#selectTypeMenu>a").on('touchstart',function (e) {
-      //           e.preventDefault();
-      //           $("#selectTypeText").text($(this).text());
-      //           $("#selectTypeRel").attr("value", $(this).attr("rel"));
-      //           $(this).parent().slideUp(200);
-      //           $(".searchArrow").removeClass("searchArrowRote");
-      //           return false;
-      //       });
     	} else if (num === 9) {
                 mySwiper.allowSlidePrev = false;
                 mySwiper.allowSlideNext = false;
