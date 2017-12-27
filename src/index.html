@@ -31,6 +31,7 @@
 <!-- Slider main container -->
 <div class="swiper-container">
     <!-- Additional required wrapper -->
+    <div id="music" class="music music-play"></div>
     <div class="swiper-wrapper">
         <!-- Slides -->
         <div class="swiper-slide page1">
@@ -71,6 +72,8 @@
     			<img src="image/rocket.gif" alt="" />
     		</div>
     		<a class="house4"></a>
+    		<img class="header-bg" src="image/header-bg.gif" alt="" >
+    		<img class="look animated infinite pulse" src="image/4-look.png" alt="">
     	</div>
     	<div class="swiper-slide page5">
     		<div class="win5 absol hide"></div>
@@ -78,17 +81,21 @@
 				<img src="image/head.gif">
 			</div>
 			<div class="absol righthand" animate data-animate="right">
-				<img src="image/righthand-Lsize.png">
+				<img src="image/righthand.png">
 			</div>
 			<div class="absol lefthand" animate data-animate="left">
-				<img src="image/lefthand-Lsize.png">
+				<img src="image/lefthand.png">
 			</div>
     		<a class="house5"></a>
+    		<img class="header-bg" src="image/header-bg.gif" alt="" >
+    		<img class="look animated infinite pulse" src="image/5-look.png" alt="">
 		</div>
 		<div class="swiper-slide page6">
 			<div class="win6 absol hide"></div>
 			<a class="house6"></a>
 			<div class="woman"><img src="image/woman.gif"></div>
+			<img class="header-bg" src="image/header-bg.gif" alt="" >
+    		<img class="look animated infinite pulse" src="image/6-look.png" alt="">
 		</div>
 		<div class="swiper-slide page7">
 			<div class="win7 absol hide"></div>
@@ -102,6 +109,8 @@
 			<div class="absol sun" animate data-animate="sunright">
 				<img src="image/sun.png">
 			</div>
+			<img class="header-bg" src="image/header-bg.gif" alt="" >
+    		<img class="look animated infinite pulse" src="image/7-look.png" alt="">
 		</div>
 		<div class="swiper-slide page8">
 			<div class="doorplate">
@@ -124,7 +133,7 @@
 			<div class="finger" animate data-animate="zoom-finger">
 				<img class="animated infinite pulse" src="image/page9-finger.png" alt="" />
 			</div>
-			<span class="selectType">
+			<!-- <span class="selectType">
 				<a title="" href="#" class="ipt" id="selectTypeText">请选择</a>
 				<span id="selectTypeMenu">
 					<a rel="beijin" class="select-click" title="" href="#">北京</a>
@@ -132,45 +141,94 @@
 					<a rel="shenzhen" class="select-click" title="" href="#">深圳</a>
 					<a rel="guangzhou" class="select-click" title="" href="#">广州</a>
 					<a rel="chengdu" class="select-click" title="" href="#">成都</a>
+					<a rel="chengdu" class="select-click" title="" href="#">天津</a>
+					<a rel="chengdu" class="select-click" title="" href="#">武汉</a>
+					<a rel="chengdu" class="select-click" title="" href="#">西安</a>
+					<a rel="chengdu" class="select-click" title="" href="#">南京</a>
 				</span>
 				<input type="hidden" name="" class="ipt" value="" id="selectTypeRel">
 				<em class="searchArrow hh abs">下拉选择</em>
-			</span>
+			</span> -->
+			<!-- <div id="selectTypeText" class="selectTypeNormal"> -->
+				<select class="selectTypeNormal" name="" id="selectTypeRel">
+					<option value="beijin">北京</option>
+					<option value="hangzhou">杭州</option>
+					<option value="shenzhen">深圳</option>
+					<option value="guangzhou">广州</option>
+					<option value="chengdu">成都</option>
+					<option value="tianjin">天津</option>
+					<option value="wuhan">武汉</option>
+					<option value="xian">西安</option>
+					<option value="nanjin">南京</option>
+				</select>
+			<!-- </div> -->
 			<a class="next"><img src="image/dream.png"></a>
 		</div>
 		<div class="swiper-slide page10">
-			<div class="skillbar-wrapper">
-				<div class="skillbar clearfix " data-percent="20%">
-					<div class="skillbar-bg"></div>
+		<div class="vote-new clearfix">
+			<div class="skillbar-wrapper vote1">
+				<div class="skillbar clearfix " data-percent="100%">
+					<div class="skillbar-bg skillbar-num1"></div>
     				<div class="skillbar-title"><span></span></div>
     				<div class="skillbar-bar" style="background: #4c9d2a;"></div>
     				<div class="skill-bar-percent">20%</div>
     			</div>
-   				<div class="skillbar clearfix " data-percent="40%">
-   					<div class="skillbar-bg"></div>
+   				<div class="skillbar clearfix " data-percent="90%">
+   					<div class="skillbar-bg skillbar-num2"></div>
     				<div class="skillbar-title"><span></span></div>
     				<div class="skillbar-bar" style="background: #4c9d2a;"></div>
     				<div class="skill-bar-percent">20%</div>
     			</div>
-			    <div class="skillbar clearfix " data-percent="60%">
-			    	<div class="skillbar-bg"></div>
+			    <div class="skillbar clearfix " data-percent="80%">
+			    	<div class="skillbar-bg skillbar-num3"></div>
 			    	<div class="skillbar-title"><span></span></div>
 					<div class="skillbar-bar" style="background: #4c9d2a;"></div>
 			    	<div class="skill-bar-percent">20%</div>
 				</div>
     			<div class="skillbar clearfix " data-percent="70%">
-    				<div class="skillbar-bg"></div>
+    				<div class="skillbar-bg skillbar-num4"></div>
     				<div class="skillbar-title"><span></span></div>
 				    <div class="skillbar-bar" style="background: #4c9d2a;"></div>
 				    <div class="skill-bar-percent">20%</div>
 				</div>
-			    <div class="skillbar clearfix " data-percent="100%">
-			    	<div class="skillbar-bg"></div>
+			    <div class="skillbar clearfix " data-percent="60%">
+			    	<div class="skillbar-bg skillbar-num5"></div>
+				    <div class="skillbar-title"><span></span></div>
+				    <div class="skillbar-bar" style="background: #4c9d2a;"></div>
+			   		<div class="skill-bar-percent">20%</div>
+			   	</div>
+				<div class="skillbar clearfix " data-percent="50%">
+					<div class="skillbar-bg skillbar-num6"></div>
+    				<div class="skillbar-title"><span></span></div>
+    				<div class="skillbar-bar" style="background: #4c9d2a;"></div>
+    				<div class="skill-bar-percent">20%</div>
+    			</div>
+   				<div class="skillbar clearfix " data-percent="40%">
+   					<div class="skillbar-bg skillbar-num7"></div>
+    				<div class="skillbar-title"><span></span></div>
+    				<div class="skillbar-bar" style="background: #4c9d2a;"></div>
+    				<div class="skill-bar-percent">20%</div>
+    			</div>
+			    <div class="skillbar clearfix " data-percent="30%">
+			    	<div class="skillbar-bg skillbar-num8"></div>
+			    	<div class="skillbar-title"><span></span></div>
+					<div class="skillbar-bar" style="background: #4c9d2a;"></div>
+			    	<div class="skill-bar-percent">20%</div>
+				</div>
+    			<div class="skillbar clearfix " data-percent="20%">
+    				<div class="skillbar-bg skillbar-num9"></div>
+    				<div class="skillbar-title"><span></span></div>
+				    <div class="skillbar-bar" style="background: #4c9d2a;"></div>
+				    <div class="skill-bar-percent">20%</div>
+				</div>
+			    <div class="skillbar clearfix " data-percent="10%">
+			    	<div class="skillbar-bg skillbar-num10"></div>
 				    <div class="skillbar-title"><span></span></div>
 				    <div class="skillbar-bar" style="background: #4c9d2a;"></div>
 			   		<div class="skill-bar-percent">20%</div>
 			   	</div>
 			</div>
+		</div>
 			<div class="mask absol">
 				<img src="image/shareguide.gif" animate data-animate="guide">
 				<img class="" src="image/shareword.png" animate data-animate="word">
@@ -183,6 +241,7 @@
 			</div>
 		</div>
     </div>
+	<audio  src="image/bg.mp3" perload  id="Jaudio" loop style='display:none;opacity:0' ></audio>
 </div>
 <script type="text/javascript" src="./js/jquery.min.js"></script>
 <script type="text/javascript" src="./js/swiper/js/swiper.min.js"></script>

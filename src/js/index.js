@@ -29,7 +29,7 @@ $(document).ready(function () {
             if (num==4) { 
             clearInterval(doortimer) 
                 mySwiper.allowSlideNext = true;
-                // mySwiper.slideNext();
+                mySwiper.slideNext();
             }  
         },1000)  
     }
@@ -37,51 +37,79 @@ $(document).ready(function () {
         addAminate($('.page1'));
         mySwiper.allowSlideNext = false;
         openDoor(mySwiper);
+		audioAutoPlay('Jaudio');
+
+        $("#music").on("click",function(){
+            var audio = document.getElementById("Jaudio");
+
+
+            if($(this).hasClass('music-stop')){
+                $(this).removeClass('music-stop');
+                $(this).addClass('music-play');
+                audio.play();
+            }else{
+                $(this).removeClass('music-play');
+                $(this).addClass('music-stop');
+                audio.pause();
+            }
+        });
     }
-    
+
+
     if (mySwiper.activeIndex === 0) {
     	init();
     }
+	function audioAutoPlay(id){  
+		var audio = document.getElementById(id);  
+		audio.play();
+		document.addEventListener("WeixinJSBridgeReady", function () {  
+				audio.play();  
+		}, false);  
+		document.addEventListener('YixinJSBridgeReady', function() {  
+			audio.play();  
+		}, false);
+	}  
+		
     function vote(city, slider) {
         // 参数对应名字：beijing,shenzhen,guangzhou,hangzhou,chengdu
         $.post('a.php', { act : 'vote' , cityname:city}, function(a){
-            if(!a.success) {
-                var fakeData = [
-                    {area: '北京', amount: 50, percent: '20%'},
-                    {area: '杭州', amount: 10, percent: '2%'},
-                    {area: '深圳', amount: 40, percent: '10%'},
-                    {area: '广州', amount: 90, percent: '50%'},
-                    {area: '成都', amount: 30, percent: '5%'}
-                ];
+             if(!a.success) {
+                 var fakeData = [
+                     {area: '北京', amount: 50, percent: '20%'},
+                     {area: '杭州', amount: 10, percent: '2%'},
+                     {area: '深圳', amount: 40, percent: '10%'},
+                     {area: '广州', amount: 90, percent: '50%'},
+                     {area: '成都', amount: 30, percent: '5%'}
+                 ];
 
-                var maxinfo = a.info[0];
-                var maxticket = maxinfo['total_ticket'];
+                 var maxinfo = a.info[0];
+                 var maxticket = maxinfo['total_ticket'];
 
-                var arr = new Array();
-                for (var i = 0 ; i< a.info.length ; i ++) {
-                    var item = new Array();
-                    item['area'] = a.info[i]['area'];
-                    item['amount'] = a.info[i]['total_ticket'];
-                    if (maxticket <= 0) {
-                        item['percent'] = "0%";
-                    } else {
-                        item['percent'] = a.info[i]['total_ticket'] * 100 / maxticket + "%";
-                    }
-                    arr[arr.length] = item;
-                }
-                var data = arr;
-                $('.skillbar').each(function(i){
-                    $(this).attr('data-percent', data[i].percent);
-                    $('.skillbar-title span').eq(i).html(data[i].area + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + data[i].amount + '票');
-                    $(this).find('.skillbar-bar').animate({
-                        width:$(this).attr('data-percent')
-                    }, 800);
-                });
+                 var arr = new Array();
+                 for (var i = 0 ; i< a.info.length ; i ++) {
+                     var item = new Array();
+                     item['area'] = a.info[i]['area'];
+                     item['amount'] = a.info[i]['total_ticket'];
+                     if (maxticket <= 0) {
+                         item['percent'] = "0%";
+                     } else {
+                         item['percent'] = a.info[i]['total_ticket'] * 100 / maxticket + "%";
+                     }
+                     arr[arr.length] = item;
+                 }
+                 var data = arr;
+                 $('.skillbar').each(function(i){
+                     $(this).attr('data-percent', data[i].percent);
+                     $('.skillbar-title span').eq(i).html(data[i].area + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + data[i].amount + '票');
+                     $(this).find('.skillbar-bar').animate({
+                         width:$(this).attr('data-percent')
+                     }, 800);
+                 });
 
-                mySwiper.slideNext();
-            } else {
-                alert(a.msg);
-            }
+                 mySwiper.slideNext();
+             } else {
+                 alert(a.msg);
+             }
         }, "json");
     }
 
@@ -164,6 +192,7 @@ $(document).ready(function () {
                 vote(cityname, mySwiper);
     		});
     		$("#selectTypeText").on('touchstart', function(e){
+                debugger
                 e.preventDefault();
                 $("#selectTypeMenu").slideDown(200);
                 $(".searchArrow").addClass("searchArrowRote");
