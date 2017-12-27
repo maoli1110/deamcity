@@ -106,9 +106,8 @@ $(document).ready(function () {
                         item['percent'] = "0%";
                     } else {
                         item['percent'] = a.info[i]['total_ticket'] * 100 / maxticket + "%";
-                    
-                        arr[arr.length] = item;
                     }
+                    arr[arr.length] = item;
                 }
                 var data = arr;
                 $('.skillbar').each(function(i){
