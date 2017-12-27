@@ -113,7 +113,7 @@ $(document).ready(function () {
                 $('.skillbar').each(function(i){
                     $(this).attr('data-percent', data[i].percent);
                     $('.skillbar-title span').eq(i).html(data[i].area + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + data[i].amount + '票');
-                    (this).find('.skillbar-bar').animate({
+                    $(this).find('.skillbar-bar').animate({
                         width:$(this).attr('data-percent')
                     }, 800);
                 });
