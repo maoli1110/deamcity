@@ -48,7 +48,7 @@ $(document).ready(function () {
                 mySwiper.slideTo(1, 1, false);
                 removeAminate();
                 addAminate($('.page2'));
-            }, 1000);
+            }, 2500);
         });
 		audioAutoPlay('Jaudio');
 
