@@ -144,30 +144,49 @@ $(document).ready(function () {
     	if (num === 0) {
             init();
         } else if (num === 1) {
-            // mySwiper.allowSlideNext = false;
-            setTimeout(function () {
-                $('.page2').addClass('animated');
-                $('.page2').addClass($('.page2').data('animate'));
-            }, 1);
-            
-    		timer = setTimeout(function () {
-    			mySwiper.slideNext();
-    		}, 4000);
-        } else if (num === 7) { // 视频相关
-    		$('#videoPlay').on('tap', function () {
-				console.log('sdss')
-                videoinfo.play(); 
-                document.addEventListener("WeixinJSBridgeReady", function () {
-                    videoinfo.play(); 
-                }, false);
-    		});
-    		var videobox=document.getElementById('videoinfo');
+            mySwiper.allowSlidePrev = false;
+      //       mySwiper.allowSlideNext = false;
+    		// timer = setTimeout(function () {
+      //           mySwiper.allowSlideNext = true;
+    		// 	mySwiper.slideNext();
+    		// }, 4000);
+        }  else if (num === 2) {
+            mySwiper.allowSlidePrev = true;
+      //       mySwiper.allowSlideNext = false;
+            // timer = setTimeout(function () {
+      //           mySwiper.allowSlideNext = true;
+            //  mySwiper.slideNext();
+            // }, 4000);
+        } else if (num === 6) {
+            mySwiper.allowSlideNext = true;
+      //       mySwiper.allowSlideNext = false;
+            // timer = setTimeout(function () {
+      //           mySwiper.allowSlideNext = true;
+            //  mySwiper.slideNext();
+            // }, 4000);
+        } else if (num === 7) {
+            mySwiper.allowSlideNext = false;
+            $('#go-vote').on('tap', function () {
+                mySwiper.allowSlideNext = true;
+                mySwiper.slideNext();
+            });
+
+            // 视频相关
+            //      $('#videoPlay').on('tap', function () {
+                        // console.log('sdss')
+            //             videoinfo.play(); 
+            //             document.addEventListener("WeixinJSBridgeReady", function () {
+            //                 videoinfo.play(); 
+            //             }, false);
+            //      });  
+            //      
+            var videobox=document.getElementById('videoinfo');
             
             videobox.addEventListener('timeupdate',function(){
                 var currenttime=videobox.currentTime;            
                 console.log('当前播放时间：'+videobox.currentTime);
-            })        
-            
+            })   
+             
             //视频播放状态
             videobox.addEventListener('canplaythrough',function(){
                 console.log('canplaythrough');
@@ -178,7 +197,11 @@ $(document).ready(function () {
             videobox.addEventListener('ended',function(){
                 console.log('播放事件：ended');
             })
+
+            
+
     	} else if (num === 8) {
+            mySwiper.allowSlidePrev = false;
     		mySwiper.allowSlideNext = false;
     		$('.next').on('tap', function () {
     			var cityname = $("#selectTypeRel").val();
@@ -189,9 +212,9 @@ $(document).ready(function () {
                 console.log(cityname,'cityname');
                 // 投票
                 vote(cityname, mySwiper);
+                
     		});
     		$("#selectTypeText").on('touchstart', function(e){
-                debugger
                 e.preventDefault();
                 $("#selectTypeMenu").slideDown(200);
                 $(".searchArrow").addClass("searchArrowRote");
@@ -210,10 +233,10 @@ $(document).ready(function () {
                 return false;
             });
     	} else if (num === 9) {
-            mySwiper.allowSlidePrev = false;
-            mySwiper.allowSlideNext = false;
-            $('.swiper-slide.page10').addClass('animated');
-            $('.swiper-slide.page10').addClass($('.swiper-slide.page10').data('animate'));
+                mySwiper.allowSlidePrev = false;
+                mySwiper.allowSlideNext = false;
+                $('.swiper-slide.page10').addClass('animated');
+                $('.swiper-slide.page10').addClass($('.swiper-slide.page10').data('animate'));
             $('.mask').removeClass('hide');
     		function setSkillbar(data) {
                 $('.skillbar').each(function(i){

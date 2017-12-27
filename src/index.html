@@ -37,7 +37,7 @@
         <div class="swiper-slide page1" animate data-animate="fadeOut">
         	<div id="book-door" class="door1 animate-flicker"></div>
         </div>
-        <div class="swiper-slide page2" animate data-animate="fadeIn">
+        <div class="swiper-slide page2">
         	<div class="box">
         		<img src="./image/box.gif">
         	</div>
@@ -121,10 +121,11 @@
             </div>
 			<div>
 				<div id="videobox" style="width: 100%; height: 300px;">
-					<video id="videoinfo" src="./image/11.mp4" preload="auto" poster="./image/video.jpg" webkit-playsinline="true" playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" x5-video-orientation="portraint"></video>
+					<video id="videoinfo" src="./image/11.mp4" preload="auto" autoplay="autoplay" poster="./image/video.jpg" webkit-playsinline="true" playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" x5-video-orientation="portraint"></video>
 				</div>
 			</div>
-			<a><img id="videoPlay" src="image/v-button.png"></a>
+			<!-- <img id="videoPlay" src="image/page8-go.png"> -->
+			<img id="go-vote" src="image/page8-go.png">
 		</div>
 		<div class="swiper-slide page9" animate data-animate="fadeOut">
 			<div class="cloud-move">
@@ -150,7 +151,7 @@
 				<em class="searchArrow hh abs">下拉选择</em>
 			</span> -->
 			<div class="">
-				<span id="selectTypeText">请选择城市</span>
+				<span id="selectTypeText" style="font-size:20px;">请选择城市</span>
 				<select name="" id="selectTypeRel">
 					<option value="beijin">北京</option>
 					<option value="hangzhou">杭州</option>
@@ -161,6 +162,7 @@
 					<option value="wuhan">武汉</option>
 					<option value="xian">西安</option>
 					<option value="nanjin">南京</option>
+					<option value="suzhou">苏州</option>
 				</select>
 			</div>
 			<a class="next"><img src="image/dream.png"></a>

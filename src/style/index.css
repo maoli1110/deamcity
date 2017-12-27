@@ -501,7 +501,7 @@ div img {
 
 .page8 .doorplate >img {
     position: absolute;
-    width: 47.8%;
+    width: 43.8%;
     margin: 0 auto;
     right: 0;
     left: 9%;
@@ -532,7 +532,11 @@ div img {
     top: 37%;
     left: 14%;
 }
-
+.page8 #go-vote{
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
 .page9 {
     background: url(../image/9.png) no-repeat center center;
 }
@@ -562,7 +566,7 @@ div img {
 
 .page9 .next img {
     position: absolute;
-    width: 30%;
+    width: 41%;
     margin: 0 auto;
     right: 0;
     left: 0;
@@ -606,7 +610,8 @@ div img {
 
 .page10 .bottom-button > div >a {
     float: left;
-    width: 49%;
+    width: 48%;
+    margin-left: 1%;
 }
 
 .page10 .bottom-button img {
@@ -615,11 +620,11 @@ div img {
 }
 
 .page10 .bottom-button .share {
-    margin-top: -12px;
+    margin-top: 1%;
 }
 
 .page10 .bottom-button .share img {
-    width: 95%;
+    width: 99%;
 }
 
 .mask {
@@ -1164,7 +1169,7 @@ div img {
         display: block;
         position: absolute;
         width: 18%;
-        top: 28%;
+        top: 30%;
         right: 20%;
         z-index: 2;
         ;
@@ -1179,7 +1184,7 @@ div img {
         position: absolute;
         z-index: 2;
         width: 25%;
-        top: 71%;
+        top: 73%;
         left: 20%;
     }
 

@@ -38,7 +38,7 @@ get_openid_appid();
     <div id="music" class="music music-play"></div>
     <div class="swiper-wrapper">
         <!-- Slides -->
-        <div class="swiper-slide page1">
+        <div class="swiper-slide page1" animate data-animate="fadeOut">
         	<div id="book-door" class="door1 animate-flicker"></div>
         </div>
         <div class="swiper-slide page2">
@@ -75,7 +75,7 @@ get_openid_appid();
     		<div class="rocket">
     			<img src="image/rocket.gif" alt="" />
     		</div>
-    		<a class="house4"></a>
+    		<a class="house4" data-index="4"></a>
     		<img class="header-bg" src="image/header-bg.gif" alt="" >
     		<img class="look animated infinite pulse" src="image/4-look.png" alt="">
     	</div>
@@ -90,20 +90,20 @@ get_openid_appid();
 			<div class="absol lefthand" animate data-animate="left">
 				<img src="image/lefthand.png">
 			</div>
-    		<a class="house5"></a>
+    		<a class="house5" data-index="5"></a>
     		<img class="header-bg" src="image/header-bg.gif" alt="" >
     		<img class="look animated infinite pulse" src="image/5-look.png" alt="">
 		</div>
 		<div class="swiper-slide page6">
 			<div class="win6 absol hide"></div>
-			<a class="house6"></a>
+			<a class="house6" data-index="6"></a>
 			<div class="woman"><img src="image/woman.gif"></div>
 			<img class="header-bg" src="image/header-bg.gif" alt="" >
     		<img class="look animated infinite pulse" src="image/6-look.png" alt="">
 		</div>
 		<div class="swiper-slide page7">
 			<div class="win7 absol hide"></div>
-			<a class="house7"></a>
+			<a class="house7" data-index="7"></a>
 			<div class="person">
 				<img src="image/person.gif">
 			</div>
@@ -128,9 +128,9 @@ get_openid_appid();
 					<video id="videoinfo" src="./image/11.mp4" preload="auto" poster="./image/video.jpg" webkit-playsinline="true" playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" x5-video-orientation="portraint"></video>
 				</div>
 			</div>
-			<a><img id="videoPlay" src="image/vbutton.jpg"></a>
+			<a><img id="videoPlay" src="image/v-button.png"></a>
 		</div>
-		<div class="swiper-slide page9">
+		<div class="swiper-slide page9" animate data-animate="fadeOut">
 			<div class="cloud-move">
 				<img class="" animate data-animate="animate-bounce-left" src="image/page9-cloud.png" alt="" />
 			</div>
@@ -153,8 +153,9 @@ get_openid_appid();
 				<input type="hidden" name="" class="ipt" value="" id="selectTypeRel">
 				<em class="searchArrow hh abs">下拉选择</em>
 			</span> -->
-			<!-- <div id="selectTypeText" class="selectTypeNormal"> -->
-				<select class="selectTypeNormal" name="" id="selectTypeRel">
+			<div class="">
+				<span id="selectTypeText" style="font-size:20px;">请选择城市</span>
+				<select name="" id="selectTypeRel">
 					<option value="beijin">北京</option>
 					<option value="hangzhou">杭州</option>
 					<option value="shenzhen">深圳</option>
@@ -164,75 +165,76 @@ get_openid_appid();
 					<option value="wuhan">武汉</option>
 					<option value="xian">西安</option>
 					<option value="nanjin">南京</option>
+					<option value="suzhou">苏州</option>
 				</select>
-			<!-- </div> -->
+			</div>
 			<a class="next"><img src="image/dream.png"></a>
 		</div>
-		<div class="swiper-slide page10">
-		<div class="vote-new clearfix">
-			<div class="skillbar-wrapper vote1">
-				<div class="skillbar clearfix " data-percent="100%">
-					<div class="skillbar-bg skillbar-num1"></div>
-    				<div class="skillbar-title"><span></span></div>
-    				<div class="skillbar-bar" style="background: #4c9d2a;"></div>
-    				<div class="skill-bar-percent">20%</div>
-    			</div>
-   				<div class="skillbar clearfix " data-percent="90%">
-   					<div class="skillbar-bg skillbar-num2"></div>
-    				<div class="skillbar-title"><span></span></div>
-    				<div class="skillbar-bar" style="background: #4c9d2a;"></div>
-    				<div class="skill-bar-percent">20%</div>
-    			</div>
-			    <div class="skillbar clearfix " data-percent="80%">
-			    	<div class="skillbar-bg skillbar-num3"></div>
-			    	<div class="skillbar-title"><span></span></div>
-					<div class="skillbar-bar" style="background: #4c9d2a;"></div>
-			    	<div class="skill-bar-percent">20%</div>
+		<div class="swiper-slide page10" animate data-animate="fadeIn">
+			<div class="vote-new clearfix">
+				<div class="skillbar-wrapper vote1">
+					<div class="skillbar clearfix " data-percent="100%">
+						<div class="skillbar-bg skillbar-num1"></div>
+	    				<div class="skillbar-title"><span></span></div>
+	    				<div class="skillbar-bar" style="background: #4c9d2a;"></div>
+	    				<div class="skill-bar-percent">20%</div>
+	    			</div>
+	   				<div class="skillbar clearfix " data-percent="90%">
+	   					<div class="skillbar-bg skillbar-num2"></div>
+	    				<div class="skillbar-title"><span></span></div>
+	    				<div class="skillbar-bar" style="background: #4c9d2a;"></div>
+	    				<div class="skill-bar-percent">20%</div>
+	    			</div>
+				    <div class="skillbar clearfix " data-percent="80%">
+				    	<div class="skillbar-bg skillbar-num3"></div>
+				    	<div class="skillbar-title"><span></span></div>
+						<div class="skillbar-bar" style="background: #4c9d2a;"></div>
+				    	<div class="skill-bar-percent">20%</div>
+					</div>
+	    			<div class="skillbar clearfix " data-percent="70%">
+	    				<div class="skillbar-bg skillbar-num4"></div>
+	    				<div class="skillbar-title"><span></span></div>
+					    <div class="skillbar-bar" style="background: #4c9d2a;"></div>
+					    <div class="skill-bar-percent">20%</div>
+					</div>
+				    <div class="skillbar clearfix " data-percent="60%">
+				    	<div class="skillbar-bg skillbar-num5"></div>
+					    <div class="skillbar-title"><span></span></div>
+					    <div class="skillbar-bar" style="background: #4c9d2a;"></div>
+				   		<div class="skill-bar-percent">20%</div>
+				   	</div>
+					<div class="skillbar clearfix " data-percent="50%">
+						<div class="skillbar-bg skillbar-num6"></div>
+	    				<div class="skillbar-title"><span></span></div>
+	    				<div class="skillbar-bar" style="background: #4c9d2a;"></div>
+	    				<div class="skill-bar-percent">20%</div>
+	    			</div>
+	   				<div class="skillbar clearfix " data-percent="40%">
+	   					<div class="skillbar-bg skillbar-num7"></div>
+	    				<div class="skillbar-title"><span></span></div>
+	    				<div class="skillbar-bar" style="background: #4c9d2a;"></div>
+	    				<div class="skill-bar-percent">20%</div>
+	    			</div>
+				    <div class="skillbar clearfix " data-percent="30%">
+				    	<div class="skillbar-bg skillbar-num8"></div>
+				    	<div class="skillbar-title"><span></span></div>
+						<div class="skillbar-bar" style="background: #4c9d2a;"></div>
+				    	<div class="skill-bar-percent">20%</div>
+					</div>
+	    			<div class="skillbar clearfix " data-percent="20%">
+	    				<div class="skillbar-bg skillbar-num9"></div>
+	    				<div class="skillbar-title"><span></span></div>
+					    <div class="skillbar-bar" style="background: #4c9d2a;"></div>
+					    <div class="skill-bar-percent">20%</div>
+					</div>
+				    <div class="skillbar clearfix " data-percent="10%">
+				    	<div class="skillbar-bg skillbar-num10"></div>
+					    <div class="skillbar-title"><span></span></div>
+					    <div class="skillbar-bar" style="background: #4c9d2a;"></div>
+				   		<div class="skill-bar-percent">20%</div>
+				   	</div>
 				</div>
-    			<div class="skillbar clearfix " data-percent="70%">
-    				<div class="skillbar-bg skillbar-num4"></div>
-    				<div class="skillbar-title"><span></span></div>
-				    <div class="skillbar-bar" style="background: #4c9d2a;"></div>
-				    <div class="skill-bar-percent">20%</div>
-				</div>
-			    <div class="skillbar clearfix " data-percent="60%">
-			    	<div class="skillbar-bg skillbar-num5"></div>
-				    <div class="skillbar-title"><span></span></div>
-				    <div class="skillbar-bar" style="background: #4c9d2a;"></div>
-			   		<div class="skill-bar-percent">20%</div>
-			   	</div>
-				<div class="skillbar clearfix " data-percent="50%">
-					<div class="skillbar-bg skillbar-num6"></div>
-    				<div class="skillbar-title"><span></span></div>
-    				<div class="skillbar-bar" style="background: #4c9d2a;"></div>
-    				<div class="skill-bar-percent">20%</div>
-    			</div>
-   				<div class="skillbar clearfix " data-percent="40%">
-   					<div class="skillbar-bg skillbar-num7"></div>
-    				<div class="skillbar-title"><span></span></div>
-    				<div class="skillbar-bar" style="background: #4c9d2a;"></div>
-    				<div class="skill-bar-percent">20%</div>
-    			</div>
-			    <div class="skillbar clearfix " data-percent="30%">
-			    	<div class="skillbar-bg skillbar-num8"></div>
-			    	<div class="skillbar-title"><span></span></div>
-					<div class="skillbar-bar" style="background: #4c9d2a;"></div>
-			    	<div class="skill-bar-percent">20%</div>
-				</div>
-    			<div class="skillbar clearfix " data-percent="20%">
-    				<div class="skillbar-bg skillbar-num9"></div>
-    				<div class="skillbar-title"><span></span></div>
-				    <div class="skillbar-bar" style="background: #4c9d2a;"></div>
-				    <div class="skill-bar-percent">20%</div>
-				</div>
-			    <div class="skillbar clearfix " data-percent="10%">
-			    	<div class="skillbar-bg skillbar-num10"></div>
-				    <div class="skillbar-title"><span></span></div>
-				    <div class="skillbar-bar" style="background: #4c9d2a;"></div>
-			   		<div class="skill-bar-percent">20%</div>
-			   	</div>
 			</div>
-		</div>
 			<div class="mask absol">
 				<img src="image/shareguide.gif" animate data-animate="guide">
 				<img class="" src="image/shareword.png" animate data-animate="word">
