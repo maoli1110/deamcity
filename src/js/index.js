@@ -119,8 +119,10 @@ $(document).ready(function () {
                 });
                 $('.swiper-slide.page9').addClass('animated');
                 $('.swiper-slide.page9').addClass($('.swiper-slide.page9').data('animate'));
-                mySwiper.allowSlideNext = true;
-                mySwiper.slideTo(9, 1, false);
+                setTimeout(function () {
+                    mySwiper.allowSlideNext = true;
+                    mySwiper.slideTo(9, 1, false);
+                }, 800);
              } else {
                  alert(a.msg);
              }
@@ -174,20 +176,14 @@ $(document).ready(function () {
     	} else if (num === 8) {
     		// mySwiper.allowSlideNext = false;
     		$('.next').on('tap', function () {
-    			// var cityname = $("#selectTypeRel").val();
-       //          if(!cityname){
-       //              alert("请选择城市");
-       //              return;
-       //          }
-       //          console.log(cityname,'cityname');
-       //          // 投票
-       //          vote(cityname, mySwiper);
-                $('.swiper-slide.page9').addClass('animated');
-                $('.swiper-slide.page9').addClass($('.swiper-slide.page9').data('animate'));
-                setTimeout(function () {
-                    mySwiper.allowSlideNext = true;
-                    mySwiper.slideTo(9, 1, false);
-                }, 800);
+    			var cityname = $("#selectTypeRel").val();
+                if(!cityname){
+                    alert("请选择城市");
+                    return;
+                }
+                console.log(cityname,'cityname');
+                // 投票
+                vote(cityname, mySwiper);
                 
     		});
     		$("#selectTypeText").on('touchstart', function(e){
