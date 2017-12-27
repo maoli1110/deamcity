@@ -1,6 +1,6 @@
 function addAminate(obj) {
-	obj.find('[animate]:visible').addClass('animated');
-	obj.find('[animate]:visible').each(function () {
+	obj.find('[animate]').addClass('animated');
+	obj.find('[animate]').each(function () {
 		$(this).addClass($(this).data('animate'));
 	});
 }
@@ -20,29 +20,40 @@ $(document).ready(function () {
       speed: 1500
     });
     var timer;
-    function openDoor(mySwiper) {
-        var timer = null;  
+    function openDoor(mySwiper, resolve) {
+        var timer = null;
         var num = 1;  
         doortimer = setInterval(function(){  
             num++;  
             $("#book-door").removeClass().addClass('door'+num); 
             if (num==4) { 
-            clearInterval(doortimer) 
-                mySwiper.allowSlideNext = true;
-                mySwiper.slideNext();
+                clearInterval(doortimer) 
+                mySwiper.allowSlideNext = false;
+                resolve();
+                // mySwiper.slideNext();
             }  
-        },1000)  
+        },1000);
     }
     function init() {
-        addAminate($('.page1'));
         mySwiper.allowSlideNext = false;
-        openDoor(mySwiper);
+        var promise = new Promise(function (resolve) {
+            openDoor(mySwiper, resolve);
+        });
+        promise.then(function () {
+            // $('.page1').fadeOut(800);
+            $('.swiper-slide.page1').addClass('animated');
+            $('.swiper-slide.page1').addClass($('.swiper-slide.page1').data('animate'));
+            setTimeout(function () {
+                mySwiper.allowSlideNext = true;
+                mySwiper.slideTo(1, 1, false);
+                removeAminate();
+                addAminate($('.page2'));
+            }, 810);
+        });
 		audioAutoPlay('Jaudio');
 
         $("#music").on("click",function(){
             var audio = document.getElementById("Jaudio");
-
-
             if($(this).hasClass('music-stop')){
                 $(this).removeClass('music-stop');
                 $(this).addClass('music-play');
@@ -57,6 +68,7 @@ $(document).ready(function () {
 
 
     if (mySwiper.activeIndex === 0) {
+        addAminate($('.page1'));
     	init();
     }
 	function audioAutoPlay(id){  
@@ -112,7 +124,13 @@ $(document).ready(function () {
              }
         }, "json");
     }
-
+    $('[class*="house"]').on('tap', function () {
+        var index = $(this).data('index');
+        $('.win' + index).fadeIn(600);
+        $('.win' + index).on('tap', function () {
+            $(this).fadeOut();
+        })
+    });
     mySwiper.on('slideChange', function () {
     	var num = mySwiper.activeIndex;
     	console.log(num);
@@ -126,34 +144,6 @@ $(document).ready(function () {
     		timer = setTimeout(function () {
     			mySwiper.slideNext();
     		}, 4000);
-    	} else if (num === 3) {
-    		$('.house4').on('tap', function () {
-    			$('.win4').fadeIn(600);
-    		});
-    		$('.win4').on('tap', function () {
-    			$(this).fadeOut();
-    		});
-    	}else if (num === 4) {
-            $('.house5').on('tap', function () {
-                $('.win5').fadeIn(600);
-            });
-            $('.win5').on('tap', function () {
-                $(this).fadeOut();
-            });
-        }else if (num === 5) {
-            $('.house6').on('tap', function () {
-                $('.win6').fadeIn(600);
-            });
-            $('.win6').on('tap', function () {
-                $(this).fadeOut();
-            });
-        }else if (num === 6) {
-            $('.house7').on('tap', function () {
-                $('.win7').fadeIn(600);
-            });
-            $('.win7').on('tap', function () {
-                $(this).fadeOut();
-            });
         } else if (num === 7) { // 视频相关
     		$('#videoPlay').on('tap', function () {
 				console.log('sdss')
@@ -240,5 +230,5 @@ $(document).ready(function () {
             	mySwiper.slideTo(8, 1, false);
             });
     	}
-    })
+    });
 });
