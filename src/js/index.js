@@ -48,7 +48,7 @@ $(document).ready(function () {
                 mySwiper.slideTo(1, 1, false);
                 removeAminate();
                 addAminate($('.page2'));
-            }, 810);
+            }, 1000);
         });
 		audioAutoPlay('Jaudio');
 
@@ -174,7 +174,7 @@ $(document).ready(function () {
                 console.log('播放事件：ended');
             })
     	} else if (num === 8) {
-    		// mySwiper.allowSlideNext = false;
+    		mySwiper.allowSlideNext = false;
     		$('.next').on('tap', function () {
     			var cityname = $("#selectTypeRel").val();
                 if(!cityname){

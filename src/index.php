@@ -171,64 +171,62 @@ get_openid_appid();
 		<div class="swiper-slide page10">
 		<div class="vote-new clearfix">
 			<div class="skillbar-wrapper vote1">
-				<div class="skillbar clearfix " data-percent="20%">
-					<div class="skillbar-bg"></div>
+				<div class="skillbar clearfix " data-percent="100%">
+					<div class="skillbar-bg skillbar-num1"></div>
     				<div class="skillbar-title"><span></span></div>
     				<div class="skillbar-bar" style="background: #4c9d2a;"></div>
     				<div class="skill-bar-percent">20%</div>
     			</div>
-   				<div class="skillbar clearfix " data-percent="40%">
-   					<div class="skillbar-bg"></div>
+   				<div class="skillbar clearfix " data-percent="90%">
+   					<div class="skillbar-bg skillbar-num2"></div>
     				<div class="skillbar-title"><span></span></div>
     				<div class="skillbar-bar" style="background: #4c9d2a;"></div>
     				<div class="skill-bar-percent">20%</div>
     			</div>
-			    <div class="skillbar clearfix " data-percent="60%">
-			    	<div class="skillbar-bg"></div>
+			    <div class="skillbar clearfix " data-percent="80%">
+			    	<div class="skillbar-bg skillbar-num3"></div>
 			    	<div class="skillbar-title"><span></span></div>
 					<div class="skillbar-bar" style="background: #4c9d2a;"></div>
 			    	<div class="skill-bar-percent">20%</div>
 				</div>
     			<div class="skillbar clearfix " data-percent="70%">
-    				<div class="skillbar-bg"></div>
+    				<div class="skillbar-bg skillbar-num4"></div>
     				<div class="skillbar-title"><span></span></div>
 				    <div class="skillbar-bar" style="background: #4c9d2a;"></div>
 				    <div class="skill-bar-percent">20%</div>
 				</div>
-			    <div class="skillbar clearfix " data-percent="100%">
-			    	<div class="skillbar-bg"></div>
+			    <div class="skillbar clearfix " data-percent="60%">
+			    	<div class="skillbar-bg skillbar-num5"></div>
 				    <div class="skillbar-title"><span></span></div>
 				    <div class="skillbar-bar" style="background: #4c9d2a;"></div>
 			   		<div class="skill-bar-percent">20%</div>
 			   	</div>
-			</div>
-			<div class="skillbar-wrapper vote2">
-				<div class="skillbar clearfix " data-percent="20%">
-					<div class="skillbar-bg"></div>
+				<div class="skillbar clearfix " data-percent="50%">
+					<div class="skillbar-bg skillbar-num6"></div>
     				<div class="skillbar-title"><span></span></div>
     				<div class="skillbar-bar" style="background: #4c9d2a;"></div>
     				<div class="skill-bar-percent">20%</div>
     			</div>
    				<div class="skillbar clearfix " data-percent="40%">
-   					<div class="skillbar-bg"></div>
+   					<div class="skillbar-bg skillbar-num7"></div>
     				<div class="skillbar-title"><span></span></div>
     				<div class="skillbar-bar" style="background: #4c9d2a;"></div>
     				<div class="skill-bar-percent">20%</div>
     			</div>
-			    <div class="skillbar clearfix " data-percent="60%">
-			    	<div class="skillbar-bg"></div>
+			    <div class="skillbar clearfix " data-percent="30%">
+			    	<div class="skillbar-bg skillbar-num8"></div>
 			    	<div class="skillbar-title"><span></span></div>
 					<div class="skillbar-bar" style="background: #4c9d2a;"></div>
 			    	<div class="skill-bar-percent">20%</div>
 				</div>
-    			<div class="skillbar clearfix " data-percent="70%">
-    				<div class="skillbar-bg"></div>
+    			<div class="skillbar clearfix " data-percent="20%">
+    				<div class="skillbar-bg skillbar-num9"></div>
     				<div class="skillbar-title"><span></span></div>
 				    <div class="skillbar-bar" style="background: #4c9d2a;"></div>
 				    <div class="skill-bar-percent">20%</div>
 				</div>
-			    <div class="skillbar clearfix " data-percent="100%">
-			    	<div class="skillbar-bg"></div>
+			    <div class="skillbar clearfix " data-percent="10%">
+			    	<div class="skillbar-bg skillbar-num10"></div>
 				    <div class="skillbar-title"><span></span></div>
 				    <div class="skillbar-bar" style="background: #4c9d2a;"></div>
 			   		<div class="skill-bar-percent">20%</div>
@@ -247,7 +245,7 @@ get_openid_appid();
 			</div>
 		</div>
     </div>
-	<audio  src="image/bg.mp3" perload  id="player1" loop style='display:none;opacity:0' ></audio>
+	<audio  src="image/bg.mp3" perload  id="Jaudio" loop style='display:none;opacity:0' ></audio>
 </div>
 <script type="text/javascript" src="./js/jquery.min.js"></script>
 <script type="text/javascript" src="./js/swiper/js/swiper.min.js"></script>

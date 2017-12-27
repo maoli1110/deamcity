@@ -281,7 +281,7 @@ div img {
     width: 1em;
     right: 0;
     left: 0;
-    bottom: 4.5rem;
+    bottom: 53%;
 }
 
 .page4 .look,.page5 .look,.page6 .look,.page7 .look {
@@ -406,22 +406,14 @@ div img {
     animation-delay: .5s;
 }
 
-.right {
-    right: 0;
-}
-
 .lefthand {
-    bottom: 20%;
-    transform: translateY(156px);
-    width: 66%;
+    width: 100%;
     left: -300px;
+    bottom: 0;
     transition: all 2s ease;
     animation-delay: 2s;
 }
 
-.left {
-    left: 0;
-}
 
 .page6 {
     background: url(../image/6.png) no-repeat center center;
@@ -574,7 +566,7 @@ div img {
 }
 
 .page10 {
-    background: url(../image/10.jpg) no-repeat center center;
+    background: url(../image/10.png) no-repeat center center;
 }
 
 .page10 .bottom-button {
@@ -987,7 +979,6 @@ div img {
 .skillbar-bg {
     z-index: 1;
     position: absolute;
-    /*background: url(../image/vote1.png) no-repeat top left;*/
     background-size: 100%;
     top: -37px;
     bottom: -11px;
@@ -1048,7 +1039,7 @@ div img {
     height: 137px;
     background: url(../image/door4.png) no-repeat center center;
     no-repeat
-}  
+}
 
 /*@media screen and (max-width: 1280px) {
     html{ font-size: 200px; }
@@ -1101,4 +1092,141 @@ div img {
 .vote-new .skillbar-wrapper {
     float: left;
     padding: 0 10%;
+}
+
+/*屏幕适应====*/
+@media screen and (max-width: 640px) {
+   .lefthand {
+        width: 100%;
+        bottom:-5%;
+        left: -300px;
+        transition: all 2s ease;
+        animation-delay: 2s;
+    }
+    .righthand {
+        width: 100%;
+        top: -13%;
+        right: -300px;
+        transition: all 2s ease;
+        animation-delay: .5s;
+    }
+    .person {
+        width: 20%;
+        margin-left: 63%;
+        margin-top: 50%;
+    }
+    .woman {
+        margin-left: 50%;
+        margin-top: 65%;
+        width: 17%;
+    }
+    .head img {
+        margin-left: 30%;
+        margin-top: 22%;
+        width: 32%;
+    }
+    .page2 .text-1 img {
+        display: block;
+        position: absolute;
+        width: 11%;
+        top: 12%;
+        right: 24%;
+        z-index: 2;
+    }
+    .page2 .text-2 img {
+        display: block;
+        position: absolute;
+        width: 18%;
+        top: 28%;
+        right: 20%;
+        z-index: 2;
+        ;
+    }
+    .page2 .text-3 img {
+        position: absolute;
+        width: 48%;
+        right: 28%;
+        top: 19%;
+    }
+    .plant img {
+        position: absolute;
+        z-index: 2;
+        width: 25%;
+        top: 71%;
+        left: 20%;
+    }
+
+}
+/*@media only screen and (min-device-width: 320px){
+         //针对iPhone 3
+}*/
+  
+/*@media only screen and (min-device-width: 320px)and (-webkit-min-device-pixel-ratio: 2) {
+         //针对iPhone 4, 5c,5s, 所有iPhone6的放大模式，个别iPhone6的标准模式
+}*/
+/*iphon6*/
+@media only screen and (min-device-width: 375px)and (-webkit-min-device-pixel-ratio: 2) {
+    .righthand {
+    width: 100%;
+    top: -4%;
+    right: -300px;
+    transition: all 2s ease;
+    animation-delay: .5s;
+    }
+
+    .lefthand {
+        width: 100%;
+        left: -300px;
+        bottom: -4%;
+        transition: all 2s ease;
+        animation-delay: 2s;
+    }
+    .person {
+        width: 20%;
+        margin-left: 69%;
+        margin-top: 56%;
+    }
+    .woman {
+        margin-left: 43%;
+        margin-top: 70%;
+        width: 17%;
+    }
+    .trojan {
+        margin-left: -5%;
+        margin-top: 18%;
+        width: 12%;
+        transform: translateX(80px) translateY(48px);
+    }
+
+}
+/*iphon6+*/
+@media only screen and (min-device-width: 375px)and (-webkit-min-device-pixel-ratio: 3) {
+    .righthand {
+    width: 100%;
+    top: -3%;
+    right: -300px;
+    transition: all 2s ease;
+    animation-delay: .5s;
+    }
+
+    .lefthand {
+        width: 100%;
+        left: -300px;
+        bottom: -4%;
+        transition: all 2s ease;
+        animation-delay: 2s;
+    }
+    .person {
+        width: 20%;
+        margin-left: 69%;
+        margin-top: 56%;
+    }
+  
+}
+/*掩护*/
+.left {
+    left: 0;
+}
+.right {
+    right: 0;
 }
